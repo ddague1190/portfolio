@@ -4,7 +4,6 @@ import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 import Analytics from "../components/analytics"
 import siteMetadata from "../data/siteMetadata"
-import { ClientReload } from "../components/utilities/ClientReload"
 import LayoutWrapper from "../components/layout/LayoutWrapper"
 import { proxy, useProxy, useSnapshot } from 'valtio'
 import { useEffect } from "react"
@@ -37,7 +36,6 @@ export default function App({ Component, pageProps }) {
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
-      {isDevelopment && isSocket && <ClientReload />}
       <Analytics />
 
       <LayoutWrapper>
