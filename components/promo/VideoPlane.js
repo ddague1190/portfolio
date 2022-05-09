@@ -11,7 +11,7 @@ const VideoPlane = forwardRef(({ color = "white", shift = 1, opacity = 1, args, 
     const material = useRef()
     let last = state.top.current
     const [video] = useState(() =>
-        Object.assign(document.createElement('video'), { src: "https://ddague1190portfolio.s3.amazonaws.com/fishnstik_demo.mp4", crossOrigin: 'Anonymous', loop: true, muted: true }),
+        Object.assign(document.createElement('video'), { src: "https://d3f2mb23naggdc.cloudfront.net/fishnstik_demo.mp4", crossOrigin: 'Allow-Origin', loop: true, muted: true }),
     )
     useEffect(() => void video.play(), [video])
     useFrame(() => {
