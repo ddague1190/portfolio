@@ -3,6 +3,7 @@ import { Html } from "@react-three/drei";
 import { Text } from "./Text";
 import state from "../../store";
 import VideoPlane from "./VideoPlane";
+import { ExperimentalVideoPlane } from "./VideoPlane";
 
 export default function VideoParagraph({ image, index, offset, factor, header, aspect, text }) {
 
@@ -15,8 +16,9 @@ export default function VideoParagraph({ image, index, offset, factor, header, a
     return (
         <Block factor={factor} offset={offset}>
             <group position={[-alignRight, 0, 0]}>
-                
-                <VideoPlane args={[1, 1, 32, 32]} shift={50} size={size} aspect={aspect} scale={[w * size, (w * size) / aspect, 1]} />
+            <ExperimentalVideoPlane args={[1, 1, 32, 32]} shift={50} size={size} aspect={aspect} scale={[w * size, (w * size) / aspect, 1]} />
+
+                {/* <VideoPlane args={[1, 1, 32, 32]} shift={50} size={size} aspect={aspect} scale={[w * size, (w * size) / aspect, 1]} /> */}
                 <Html
                     className="cursor-pointer pointer-events-none"
                     style={{ textAlign: left ? "left" : "right", fontSize: '20px' }}
@@ -27,14 +29,14 @@ export default function VideoParagraph({ image, index, offset, factor, header, a
 
 
                 </Html>
-                <Html position={[w > 8 ? -3 : -1.5, 1.5, 0]}>
-                    <div className='absolute z-50 ml-3 mt-5 sm:flex-row -translate-x-20 items-center flex gap-2 flex-col w-max'>
-                        <div id='href:/projects/fishnstik' className="cursor-pointer font-extrabold tracking-tighter bg-white inline-flex items-center px-8 py-4 border border-black  text-lg lg:text-2xl rounded-md shadow-sm text-black bg-opacity-60 focus:outline-none focus:ring-2 focus:ring-offset-2"
+                <Html position={[w > 8 ? -2 : -1, 1.5, 0]}>
+                    <div className='absolute z-50 ml-3 mt-5 lg:flex-row -translate-x-20 items-center flex gap-2 flex-col w-max'>
+                        <div id='href:/projects/fishnstik' className="cursor-pointer font-extrabold tracking-tighter bg-white inline-flex items-center px-8 py-4 border border-black text-2xl lg:text-3xl rounded-md shadow-sm text-black bg-opacity-50 focus:outline-none focus:ring-2 focus:ring-offset-2"
                         >
                             See FishNStik details
 
                         </div>
-                        <div id='href:/projects/' className="cursor-pointer font-bold tracking-tighter inline-flex items-center px-4 py-2 border border-gray-700 text-lg w-max lg:text-xl rounded-md shadow-sm text-gray-700 bg-white bg-opacity-60  focus:outline-none focus:ring-2 focus:ring-offset-2"
+                        <div id='href:/projects/' className="cursor-pointer font-bold tracking-tighter inline-flex items-center px-4 py-2 border border-gray-700 text-lg w-max lg:text-xl rounded-md shadow-sm text-gray-700 bg-white bg-opacity-50  focus:outline-none focus:ring-2 focus:ring-offset-2"
                         >
                             See all projects
 

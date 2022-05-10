@@ -4,13 +4,41 @@ import * as THREE from 'three'
 import lerp from "lerp"
 import "./CustomMaterial"
 import state from "../../store"
-import { Suspense } from "react"
 
-const VideoPlane = forwardRef(({ color = "white", shift = 1, opacity = 1, args, map, ...props }, ref) => {
+
+export const ExperimentalVideoPlane = forwardRef(({ color = "white", shift = 1, opacity = 1, args, map, ...props }, ref) => {
+    const meshRef = useRef();
+    const material = useRef()
+    useEffect(() => {
+      const vid = document.createElement("video");
+      vid.src = "https://d3f2mb23naggdc.cloudfront.net/fishnstik_demo.mp4";
+      vid.crossOrigin = "Allow-Origin";
+      vid.loop = vid.muted = vid.playsInline = true;
+      vid.play();
+      material.current.map = new THREE.VideoTexture(vid);
+    //   meshRef.current.material.map = 
+    });
+
+    useFrame(() => {
+        const { pages, top } = state
+        // material.current.shift = lerp(material.current.shift, ((top.current - last) / shift) * 1.5, 0.1)
+        // last = top.current
+    })
+
+    return (
+      <mesh ref={meshRef} {...props}>
+        <planeGeometry attach="geometry" />
+        <customMaterial ref={material} color={color} transparent opacity={opacity} />
+      </mesh>
+    );
+  });
+
+
+const VideoPlane = forwardRef(({ color = "white", shift = 1, opacity = 1, args, ...props }, ref) => {
     const material = useRef()
     let last = state.top.current
     const [video] = useState(() =>
-        Object.assign(document.createElement('video'), { src: "https://d3f2mb23naggdc.cloudfront.net/fishnstik_demo.mp4", crossOrigin: 'Allow-Origin', loop: true, muted: true }),
+        Object.assign(document.createElement('video'), { src: "https://d3f2mb23naggdc.cloudfront.net/fishnstik_demo.mp4", crossOrigin: 'Allow-Origin', loop: true, muted: true, playsInline: true}),
     )
     useEffect(() => void video.play(), [video])
     useFrame(() => {
@@ -19,29 +47,17 @@ const VideoPlane = forwardRef(({ color = "white", shift = 1, opacity = 1, args, 
         last = top.current
     })
     return (
-        <Suspense fallback={
-
-            <video controls width="">
-
-              
-            <source src="https://d3f2mb23naggdc.cloudfront.net/fishnstik_demo.mp4"
-              type="video/mp4"/>
-
-              Sorry, your browser does not support embedded videos.
-            </video>
-        }>
-
+ 
         <mesh ref={ref} {...props}>
-            <planeBufferGeometry args={args} />
-            <customMaterial ref={material} color={color} transparent opacity={opacity}>
-                <videoTexture attach="map" args={[video]} encoding={THREE.sRGBEncoding} />
+            <planeBufferGeometry attach="geometry" args={args} />
+            <customMaterial ref={material}  >
+                <videoTexture attach='map' args={[video]} encoding={THREE.sRGBEncoding} />
             </customMaterial>
         </mesh>
-        </Suspense>
 
     )
 })
 
 export default VideoPlane
-
+ExperimentalVideoPlane.displayName= 'ExperimentalVideoPlane';
 VideoPlane.displayName = 'VideoPlane';

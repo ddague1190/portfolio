@@ -142,9 +142,6 @@ canvas {
 
 #myportal {
   position: fixed;
+  z-index: 10000000000;
   top: 0;
-}
-
-a {
-  pointer-events: all;
 }
