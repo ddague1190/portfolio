@@ -4,6 +4,7 @@ import * as THREE from 'three'
 import lerp from "lerp"
 import "./CustomMaterial"
 import state from "../../store"
+import { Suspense } from "react"
 
 const VideoPlane = forwardRef(({ color = "white", shift = 1, opacity = 1, args, map, ...props }, ref) => {
     const material = useRef()
@@ -18,12 +19,26 @@ const VideoPlane = forwardRef(({ color = "white", shift = 1, opacity = 1, args, 
         last = top.current
     })
     return (
+        <Suspense fallback={
+
+            <video controls width="">
+
+              
+            <source src="https://d3f2mb23naggdc.cloudfront.net/fishnstik_demo.mp4"
+              type="video/mp4"/>
+
+              Sorry, your browser does not support embedded videos.
+            </video>
+        }>
+
         <mesh ref={ref} {...props}>
             <planeBufferGeometry args={args} />
             <customMaterial ref={material} color={color} transparent opacity={opacity}>
-                <videoTexture attach="map" args={[video]}  />
+                <videoTexture attach="map" args={[video]} encoding={THREE.sRGBEncoding} />
             </customMaterial>
         </mesh>
+        </Suspense>
+
     )
 })
 

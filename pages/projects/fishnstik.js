@@ -85,7 +85,7 @@ export default function FishNStik() {
         <div className="flex justify-center items-center w-full">
           <video controls width="">
 
-
+              
               <source src="https://d3f2mb23naggdc.cloudfront.net/fishnstik_demo.mp4"
                 type="video/mp4"/>
 
