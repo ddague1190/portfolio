@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, useReducer } from 'react'
 import { useRouter } from "next/router"
 import Link from "next/link";
 import { addOverflowHidden, removeOverflowHidden } from "../../../lib/homeOverflowStyles"
@@ -11,17 +11,51 @@ const CALCULATOR = 'CALCULATOR'
 const ARTICLE_1 = 'ARTICLE_1'
 const ARTICLE_2 = 'ARTICLE_2'
 
-const links = {
-    TINY_SHELTER_ARCHIVE: ['https://www.tinyshelterarchive.com/', 'https://github.com/ddague1190/tinyshelterarchive'],
-    STONETHRONE: ['https://secure-lowlands-39459.herokuapp.com/', 'https://github.com/ddague1190/shopstonethrone'],
-    CALCULATOR: ['https://ddague1190.github.io/calculator/', 'https://github.com/ddague1190/calculator'],
-    ARTICLE_1: ['https://ddague1190.github.io/article_kawasakivoyager/', 'https://github.com/ddague1190/article_kawasakivoyager'],
-    ARTICLE_2: ['https://ddague1190.github.io/article_horseculture/', 'https://github.com/ddague1190/article_horseculture']
+const initial_state = {
+    TINY_SHELTER_ARCHIVE: {
+        links: ['https://www.tinyshelterarchive.com/', 'https://github.com/ddague1190/tinyshelterarchive'],
+        show: false
+    },
+    STONETHRONE: {
+        links: ['https://secure-lowlands-39459.herokuapp.com/', 'https://github.com/ddague1190/shopstonethrone'],
+        show: false
+    },
+    CALCULATOR: {
+        links: ['https://ddague1190.github.io/calculator/', 'https://github.com/ddague1190/calculator'],
+        show: false
+    },
+    ARTICLE_1: {
+        links: ['https://ddague1190.github.io/article_kawasakivoyager/', 'https://github.com/ddague1190/article_kawasakivoyager'],
+        show: false
+    },
+    ARTICLE_2: {
+        links: ['https://ddague1190.github.io/article_horseculture/', 'https://github.com/ddague1190/article_horseculture'],
+        show: false
+    }
+}
+
+const reducer = (state, action) => {
+    const copy = { ...state }
+
+    switch (action.type) {
+        case 'show':
+            copy[action.whichLink]['show'] = true
+            return copy
+
+        case 'hide':
+            copy[action.whichLink]['show'] = false
+            return copy
+
+
+        default:
+            return state
+
+
+    }
 }
 
 const TrainingPurposes = () => {
-
-
+    const [state, dispatch] = useReducer(reducer, initial_state)
 
     useEffect(() => {
         removeOverflowHidden()
@@ -39,7 +73,8 @@ const TrainingPurposes = () => {
                         More developed
                     </dt>
                     <dd
-                        // onClick={setLink.bind(null, TINY_SHELTER_ARCHIVE)}
+                        onMouseEnter={dispatch.bind(null, { type: 'show', whichLink: TINY_SHELTER_ARCHIVE })}
+                        onMouseLeave={dispatch.bind(null, { type: 'hide', whichLink: TINY_SHELTER_ARCHIVE })}
                         className="group p-6 relative flex flex-col"
                     >
                         <span className="text-2xl sm:text-4xl pt-2 text-white font-extrabold">Tiny shelter archive</span>
@@ -47,21 +82,23 @@ const TrainingPurposes = () => {
                             <li className="translate-x-4">A pure Django application</li>
                             <li className="translate-x-8 text-blue-300">A campervan database</li>
                         </ul>
-                        <div className={`hidden group-hover:block`}>
-                            <GitHubButton links={links[TINY_SHELTER_ARCHIVE]} youTubeLink='https://www.youtube.com/watch?v=4d0LN69pRQw' />
-                        </div>
+
+                        {state[TINY_SHELTER_ARCHIVE]['show'] &&
+                            <GitHubButton links={state[TINY_SHELTER_ARCHIVE]['links']} youTubeLink='https://www.youtube.com/watch?v=4d0LN69pRQw' />
+                        }
                     </dd>
                     <dd
-                        // onClick={setLink.bind(null, STONETHRONE)}
+                        onMouseEnter={dispatch.bind(null, { type: 'show', whichLink: STONETHRONE })}
+                        onMouseLeave={dispatch.bind(null, { type: 'hide', whichLink: STONETHRONE })}
                         className="group p-6 relative flex flex-col">
                         <span className="text-2xl sm:text-4xl pt-2 text-white font-extrabold">Stonethrone</span>
                         <ul className="text-left text-gray-300">
                             <li className="translate-x-4">A Django and pure JS website</li>
                             <li className="translate-x-8 text-blue-300">An online hat store</li>
                         </ul>
-                        <div className={`hidden group-hover:block`}>
-                            <GitHubButton links={links[STONETHRONE]} youTubeLink='https://www.youtube.com/watch?v=Ssd09_FMGRo' />
-                        </div>
+                        {state[STONETHRONE]['show'] &&
+                            <GitHubButton links={state[STONETHRONE]['links']} youTubeLink='https://www.youtube.com/watch?v=Ssd09_FMGRo' />
+                        }
                     </dd>
                 </dl>
             </section>
@@ -71,29 +108,32 @@ const TrainingPurposes = () => {
                         Minor works
                     </dt>
                     <dd
-                        // onClick={setLink.bind(null, CALCULATOR)}
+                        onMouseEnter={dispatch.bind(null, { type: 'show', whichLink: CALCULATOR })}
+                        onMouseLeave={dispatch.bind(null, { type: 'hide', whichLink: CALCULATOR })}
                         className="group p-6 relative"
                     >
                         <span className=" text-2xl sm:text-4xl pt-2 font-extrabold">Pure JS Calculator</span>
-                        <div className={`hidden group-hover:block`}>
-                            <GitHubButton links={links[CALCULATOR]} />
-                        </div>
+                        {state[CALCULATOR]['show'] &&
+                            <GitHubButton links={state[CALCULATOR]['links']} />
+                        }
                     </dd>
                     <dd
-                        // onClick={setLink.bind(null, ARTICLE_1)}
+                        onMouseEnter={dispatch.bind(null, { type: 'show', whichLink: ARTICLE_1 })}
+                        onMouseLeave={dispatch.bind(null, { type: 'hide', whichLink: ARTICLE_1 })}
                         className="group p-6 relative">
                         <span className="text-2xl sm:text-4xl pt-2 font-extrabold">Article 1</span>
                         <ul className="text-left text-gray-300">
                             <li className="translate-x-4">An adventure in BEM and SASS</li>
-                            <li className="translate-x-8 text-blue-300">Cosmic motorcyclism</li>
+                            <li className="translate-x-8 text-blue-300">Parallels between NASA Voyager and Kawasaki Voyager</li>
                         </ul>
-                        <div className={`hidden group-hover:block`}>
-                            <GitHubButton links={links[ARTICLE_1]} />
-                        </div>
+                        {state[ARTICLE_1]['show'] &&
+                            <GitHubButton links={state[ARTICLE_1]['links']} />
+                        }
                     </dd>
                     <dd
 
-                        // onClick={setLink.bind(null, ARTICLE_2)}
+                        onMouseEnter={dispatch.bind(null, { type: 'show', whichLink: ARTICLE_2 })}
+                        onMouseLeave={dispatch.bind(null, { type: 'hide', whichLink: ARTICLE_2 })}
                         className="group p-6 relative"
                     >
                         <span className="text-2xl sm:text-4xl pt-2 font-extrabold">Article 2</span>
@@ -101,9 +141,9 @@ const TrainingPurposes = () => {
                             <li className="translate-x-4">An adventure in BEM and SASS</li>
                             <li className="translate-x-8 text-blue-300">Native American Plains Culture </li>
                         </ul>
-                        <div className={`hidden group-hover:block`}>
-                            <GitHubButton links={links[ARTICLE_2]} />
-                        </div>
+                        {state[ARTICLE_2]['show'] &&
+                            <GitHubButton links={state[ARTICLE_2]['links']} />
+                        }
                     </dd>
                 </dl>
 

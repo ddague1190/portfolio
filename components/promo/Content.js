@@ -1,8 +1,8 @@
 
-import React, { Suspense, useEffect, useRef, useMemo } from "react"
-import { Canvas, useLoader, useFrame } from "@react-three/fiber"
+import React, { useMemo } from "react"
+import { useLoader } from "@react-three/fiber"
 import { TextureLoader, LinearFilter } from "three"
-import { Text, MultilineText } from "./Text"
+import { Text } from "./Text"
 import Plane from "./Plane"
 import { Block, useBlock } from "../utilities/Blocks"
 import state from "../../store"

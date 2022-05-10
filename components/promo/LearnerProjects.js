@@ -3,9 +3,6 @@ import Plane from "./Plane";
 import { Html } from "@react-three/drei";
 import { Text } from "./Text";
 import state from "../../store";
-import fonts from "../utilities/fonts";
-import { nexticon } from "../utilities/icons";
-
 
 export default function LearnerProjects({ image, index, offset, factor, header, aspect, text }) {
 

@@ -1,12 +1,11 @@
-// import { ReactComponent as GitHubLogo } from './social-icons/github.svg'
-import { useEffect } from "react"
 import Link from "next/link"
 
-export default function GitHubButton({ links=[], youTubeLink }) {
+export default function GitHubButton({ links = [], youTubeLink }) {
 
-    
     return (
+
         <span className="absolute z-50 w-max top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 inline-flex shadow-sm rounded-md">
+
             <Link
                 href={links[0]}
                 passHref>
@@ -21,12 +20,12 @@ export default function GitHubButton({ links=[], youTubeLink }) {
 
             {youTubeLink &&
                 <Link
-                href={youTubeLink}
+                    href={youTubeLink}
                     passHref
-                    >
+                >
                     <button
 
-                        className="-ml-px hover:bg-green-50 cursor-pointer relative inline-flex items-center font-bold tracking-tighter px-3 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700  focus:z-10 focus:outline-none focus:ring-1"
+                        className="-ml-px hover:bg-green-50 cursor-pointer relative inline-flex items-center font-bold tracking-tighter px-3 py-2 border border-gray-300 bg-white text-sm text-gray-700  focus:z-10 focus:outline-none focus:ring-1"
                     >
                         Demo on YouTube
                     </button>
@@ -36,7 +35,7 @@ export default function GitHubButton({ links=[], youTubeLink }) {
             <Link
                 href={links[1]}
                 passHref
-                
+
             >
                 <button
                     type="button"

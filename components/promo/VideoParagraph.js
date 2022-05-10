@@ -1,11 +1,8 @@
 import { Block, useBlock } from "../utilities/Blocks"
-import Plane from "./Plane";
 import { Html } from "@react-three/drei";
 import { Text } from "./Text";
 import state from "../../store";
-import fonts from "../utilities/fonts";
 import VideoPlane from "./VideoPlane";
-import { useFrame } from "@react-three/fiber";
 
 export default function VideoParagraph({ image, index, offset, factor, header, aspect, text }) {
 
@@ -15,7 +12,6 @@ export default function VideoParagraph({ image, index, offset, factor, header, a
     const pixelWidth = w * state.zoom * size
     const left = !(index % 2)
 
-    const correctedOffset = w > 10 ? offset : w > 6 ? offset - .2 : offset - .4
 
     return (
         <Block factor={factor} offset={offset}>
@@ -39,7 +35,7 @@ export default function VideoParagraph({ image, index, offset, factor, header, a
                             See FishNStik details
 
                         </div>
-                        <div id='href:/projects/' className="cursor-pointer font-bold tracking-tighter inline-flex items-center px-4 py-2 border border-gray-500 text-lg w-max lg:text-xl rounded-md shadow-sm text-gray-500 bg-white bg-opacity-30  focus:outline-none focus:ring-2 focus:ring-offset-2"
+                        <div id='href:/projects/' className="cursor-pointer font-bold tracking-tighter inline-flex items-center px-4 py-2 border border-gray-700 text-lg w-max lg:text-xl rounded-md shadow-sm text-gray-700 bg-white bg-opacity-30  focus:outline-none focus:ring-2 focus:ring-offset-2"
                         >
                             See all projects
 

@@ -1,8 +1,8 @@
 //inspired by https://codesandbox.io/s/tender-worker-sh76f?from-embed=&file=/src/store.js:91-224
-import React, { useRef, useEffect, useState, Suspense } from "react"
-import { Canvas, useFrame, Dom, useLoader } from "@react-three/fiber"
+import React, { useRef, useEffect, Suspense } from "react"
+import { Canvas, useFrame } from "@react-three/fiber"
 import state from "../store"
-import { Html, OrbitControls, useTexture, Plane as DreiPlane } from "@react-three/drei"
+import { Html } from "@react-three/drei"
 import Content from "../components/promo/Content"
 import { addOverflowHidden, removeOverflowHidden } from "../lib/homeOverflowStyles"
 import Diamonds from "../components/promo/diamonds/Diamonds"
@@ -58,7 +58,6 @@ export default function Home() {
                 <Suspense fallback={<Html center className="text-white text-3xl font-bold tracking-tighter" >Loading...</Html>}>
                     <Content />
                     <Diamonds />
-                    <Startup />
                 </Suspense>
             </Canvas>
             <div className="scrollArea" ref={scrollArea} onScroll={onScroll}>

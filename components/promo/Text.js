@@ -1,5 +1,4 @@
-import { Vector3, TextBufferGeometry } from "three"
-// import { FontLoader } from "three"
+import { Vector3 } from "three"
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 import * as THREE from 'three'
 import React, { useCallback, useRef } from "react"

@@ -80,7 +80,7 @@ const About = () => {
                     <h2 className="uppercase text-blue-300 mb-1 mt-10 tracking-tighter border-b-[1px]">
                         Education
                     </h2>
-                    <details className='mb-1' open >
+                    <details className='' open >
                         <summary className='list-none'>HarvardX Computer Science for Web Development Certificate
                             <time className="float-right font-light">2021</time>
                         </summary>

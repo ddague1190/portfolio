@@ -1,5 +1,4 @@
 import siteMetadata from "../../data/siteMetadata";
-import projectsData from "../../data/projectsData";
 import { removeOverflowHidden, addOverflowHidden } from "../../lib/homeOverflowStyles";
 import { PageSEO } from "../../components/analytics/SEO";
 import { useEffect } from "react";

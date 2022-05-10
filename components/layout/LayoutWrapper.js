@@ -1,13 +1,8 @@
-import siteMetadata from "../../data/siteMetadata"
 import headerNavLinks from "../../data/headerNavLinks"
 import Link from "../utilities/Link"
 import SectionContainer from "./SectionContainer"
-import Footer from './Footer'
 import MobileNav from './MobileNav'
-import ThemeSwitch from './ThemeSwitch'
-import { useEffect, useRef, useState, useContext } from "react"
 import Portal from "../utilities/Portal"
-import state from "../../store"
 import { useRouter } from "next/router"
 
 const LayoutWrapper = ({ children }) => {

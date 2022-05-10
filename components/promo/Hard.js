@@ -3,8 +3,6 @@ import Plane from "./Plane";
 import { Html } from "@react-three/drei";
 import { Text } from "./Text";
 import state from "../../store";
-import fonts from "../utilities/fonts";
-import { nexticon } from "../utilities/icons";
 import styled from 'styled-components';
 
 const DD = styled.dd`
@@ -33,8 +31,6 @@ export default function Hard({ image, index, offset, factor, header, aspect, tex
     const alignRight = (canvasWidth - w * size - margin) / 2
     const pixelWidth = w * state.zoom * size
     const left = !(index % 2)
-    const color = index % 2 ? "blue" : "#03a9f4"
-    const correctedOffset = w > 10 ? offset : w > 7.2 ? (offset - .3) : w > 6 ? offset - .45 : offset - .7
     const correctionSkillsX = w > 7.8 ? 2.5 : w > 5.75 ? 1.5 : 1
     return (
         <Block factor={factor} offset={offset}>
@@ -68,11 +64,6 @@ export default function Hard({ image, index, offset, factor, header, aspect, tex
                 <Text left={left} right={!left} size={w * 0.04} color='white' top position={[((left ? -w : w) * size) / 2, (w * size) / aspect / 2 + 0.5, -1]}>
                     {header}
                 </Text>
-                {/* <Block factor={0.2}>
-                    <Text opacity={0.5} size={w * 0.5} color="#1A1E2A" position={[((left ? w : -w) / 2) * size, (w * size) / aspect / 1, -10]}>
-                        {"0" + (index + 1)}
-                    </Text>
-                </Block> */}
             </group>
         </Block>
     )

@@ -1,6 +1,4 @@
 import Link from "next/link"
-import { Canvas } from "@react-three/fiber"
-import { Sky } from "@react-three/drei"
 import { useEffect, useRef } from "react"
 import { removeOverflowHidden, addOverflowHidden } from "../../lib/homeOverflowStyles"
 const features = [

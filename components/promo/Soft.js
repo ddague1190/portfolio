@@ -1,13 +1,8 @@
 import { Block, useBlock } from "../utilities/Blocks"
-import Plane from "./Plane";
 import { Html, Sky } from "@react-three/drei";
-import { Text } from "./Text";
 import state from "../../store";
-import fonts from "../utilities/fonts";
 import Model from "../three/avatar/Anim_wave";
-import { MultilineText } from "./Text";
 import styled from 'styled-components';
-import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 
 
@@ -58,14 +53,6 @@ export default function Soft({ image, index, offset, factor, header, aspect, tex
                     </Html>
                 </mesh>
 
-
-                {/* <MultilineText left={left} lineHeight={w / 10} position={[((left ? -w : w) * size) / 2, (w * size) / aspect / 2 + 0.5, -1]} color="red" text={"documentation specialist\nQA/QC\nwriter"} /> */}
-
-                {/* <Block factor={0.2}>
-                    <Text opacity={0.5} size={w * 0.5} color="#1A1E2A" position={[((left ? w : -w) / 2) * size, (w * size) / aspect / 1, -10]}>
-                        {"0" + (index + 1)}
-                    </Text>
-                </Block> */}
             </group>
         </Block>
     )

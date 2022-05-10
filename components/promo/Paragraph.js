@@ -3,7 +3,6 @@ import Plane from "./Plane";
 import { Html } from "@react-three/drei";
 import { Text } from "./Text";
 import state from "../../store";
-import fonts from "../utilities/fonts";
 
 export default function Paragraph({ image, index, offset, factor, header, aspect, text }) {
   
