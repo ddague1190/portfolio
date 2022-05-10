@@ -19,7 +19,7 @@ export default function Soft({ image, index, offset, factor, header, aspect, tex
                     <directionalLight position={[10, 10, 20]} />
                     <Html
                         className="text-right w-max"
-                        position={[-1.2, 0, 0]}
+                        position={[-1.2, 2, 0]}
                     >
 
                         <button ref={ref} id='href:/about' className="font-bold tracking-tighter inline-flex items-center px-4 py-2 border border-transparent text-3xl rounded-md shadow-sm text-black bg-white focus:outline-none focus:ring-2 focus:ring-offset-2"

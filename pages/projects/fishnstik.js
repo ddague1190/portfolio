@@ -83,13 +83,18 @@ export default function FishNStik() {
 
         </div>
         <div className="flex justify-center items-center w-full">
+          <video controls width="">
 
-          <iframe id="ytplayer" type="text/html" className="mx-auto w-full aspect-video"
-            src="https://www.youtube.com/embed/pnPMv9FVGdE?autoplay=1&origin=http://example.com"
-            frameBorder="0"></iframe>
 
+              <source src="https://d3f2mb23naggdc.cloudfront.net/fishnstik_demo.mp4"
+                type="video/mp4"/>
+
+                Sorry, your browser does not support embedded videos.
+              </video>
+
+              
+            </div>
         </div>
       </div>
-    </div>
-  )
+      )
 }

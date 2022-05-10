@@ -15,7 +15,7 @@ export default function VideoParagraph({ image, index, offset, factor, header, a
     return (
         <Block factor={factor} offset={offset}>
             <group position={[-alignRight, 0, 0]}>
-
+                
                 <VideoPlane args={[1, 1, 32, 32]} shift={50} size={size} aspect={aspect} scale={[w * size, (w * size) / aspect, 1]} />
                 <Html
                     className="cursor-pointer pointer-events-none"
