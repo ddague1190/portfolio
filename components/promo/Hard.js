@@ -28,22 +28,22 @@ export default function Hard({ image, index, offset, factor, header, aspect, tex
 
 
     const { contentMaxWidth: w, canvasWidth, margin, mobile, viewportWidth } = useBlock()
-    const size = aspect < 1 && !mobile ? 0.65 : 1.2
+    const size = aspect < 1 && !mobile ? 0.65 : 1
     const alignRight = (canvasWidth - w * size - margin) / 2
     const pixelWidth = w * state.zoom * size
     const left = !(index % 2)
     const color = index % 2 ? "blue" : "#03a9f4"
     const correctedOffset = w > 10 ? offset : w > 7.2 ? (offset - .3) : w > 6 ? offset - .45 : offset - .7
-    const correctionSkillsX = w > 7.8 ? 2 : w > 5.75 ? 1.5 : 1
+    const correctionSkillsX = w > 7.8 ? 2.5 : w > 5.75 ? 1.5 : 1
     return (
-        <Block factor={factor} offset={correctedOffset}>
+        <Block factor={factor} offset={offset}>
             <group position={[left ? -alignRight : alignRight, 0, 0]}>
 
 
                 <Plane map={image} args={[1, 1, 32, 32]} shift={50} size={size} aspect={aspect} scale={[w * size, (w * size) / aspect, 1]} frustumCulled={false} />
                 <Html
                     style={{ width: '100vw', pointerEvents: 'none', textAlign: left ? "left" : "right", fontSize: '20px' }}
-                    position={[left || mobile ? -w+ correctionSkillsX  : - w-.5, (-w * size) / 2+1 / aspect - 2, 1]}
+                    position={[left || mobile ? -w+ correctionSkillsX  : - w-2, (-w * size) / 2 / aspect - 2, 1]}
                 >
 
                     <section className='text-xl sm:text-2xl lg:text-3xl overflow-visible flex flex-col relative py-12' >

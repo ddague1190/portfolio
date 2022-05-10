@@ -26,7 +26,7 @@ export default function Projects() {
               Showcase projects
             </dt>
             <dd className="text-4xl py-2 text-white font-extrabold">
-              <Link href="projects/fishnstik"><mark className="cursor-pointer p-2 bg-blue-300 rounded-md">FishNStik</mark></Link>
+              <Link href="projects/fishnstik"><mark className="cursor-pointer p-2 bg-blue-300 bg-opacity-30 rounded-md">FishNStik</mark></Link>
             </dd>
           </dl>
         </section>

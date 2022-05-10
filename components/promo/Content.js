@@ -1,31 +1,18 @@
-import ReactDOM from "react-dom"
-import { useRouter } from 'next/router'
+
 import React, { Suspense, useEffect, useRef, useMemo } from "react"
 import { Canvas, useLoader, useFrame } from "@react-three/fiber"
-import { Html, Sky } from "@react-three/drei"
 import { TextureLoader, LinearFilter } from "three"
-import lerp from "lerp"
 import { Text, MultilineText } from "./Text"
 import Plane from "./Plane"
-import Plane2 from "./Plane2"
 import { Block, useBlock } from "../utilities/Blocks"
 import state from "../../store"
-import Paragraph from "./Paragraph"
-import * as THREE from 'three'
 import VideoParagraph from "./VideoParagraph"
-import VideoParagraph2 from "./VideoParagraph2"
 import Soft from "./Soft";
 import Hard from "./Hard"
-import Contact from "./Contact"
-import LearnerProjects from "./LearnerProjects"
-import { size } from "lodash"
+import { Html } from "@react-three/drei"
+
 
 export default function Content() {
-
-
-
-
-
   const images = useLoader(
     TextureLoader,
     state.paragraphs.map(({ image }) => image)
@@ -50,13 +37,25 @@ export default function Content() {
   const unCorrectedOffset = 3.2
   const correctedOffset = w > 10 ? unCorrectedOffset : w > 7.2 ? unCorrectedOffset - .4 : w > 6 ? unCorrectedOffset - .55 : unCorrectedOffset - .7
   const contactMeX = w > 12 ? 5 : w > 11 ? 4 : 3
+  const size = w * sizeFactor < .75 ? w * sizeFactor : .75
   return (
     <>
 
-      <Block factor={2} offset={0}>
-        <Block factor={0} >
-          <MultilineText top left size={w * sizeFactor} lineHeight={w / 7} position={[-w / 1.5, 0.5, 0]} color="white" text={"Hello all,\nI am a front-end focused,\nfull-stack web developer"} />
+      <Block factor={1} offset={0}>
+        <Block factor={1.2}>
+          <Text left size={w * 0.15} position={[-w / 3.2, 2, -1]} color="black">
+            Hello! 
+          </Text>
         </Block>
+        <Block factor={1.0}>
+          <Html className="bottom-left pointer-events-none" style={{ color: "white" }} position={[-canvasWidth / 2, -canvasHeight / 2, 0]}>
+            <div className="text-4xl w-max font-extrabold text-white tracking-tighter mb-5">Darryl Dague's portfolio</div>
+            <div className="text-2xl w-max font-light"> -front-end focused,{mobile ? <br /> : ""} full-stack web developer.</div>
+          </Html>
+        </Block>
+        {/* <Block factor={1.2} >
+          <MultilineText top left size={w *.15} lineHeight={w / 7} position={[-w / 3.2, 0.5, -1]} color="gray" text={"Hello all,\nI am a front-end focused,\nfull-stack web developer"} />
+        </Block> */}
       </Block>
 
       <VideoParagraph index={0} {...state.paragraphs[0]} image={images[0]} onClick={() => { alert('asdf') }} />
@@ -66,8 +65,8 @@ export default function Content() {
       <Soft index={2} {...state.paragraphs[2]} image={images[2]} />
 
 
-      <Block key={0} factor={0} offset={0}>
-        <Plane map={heroPic} args={[40, 20, 32, 32]} shift={50} color='white' rotation={[0, 0, Math.PI / 16]} position={[.8, -8, -100]} />
+      <Block key={0} factor={1} offset={0}>
+        <Plane materialShift map={heroPic} args={[50, 10, 32, 32]}   shift={40} rotation={[0, Math.PI/8, Math.PI / 32]} position={[-1,5,-200]} />
       </Block>
 
     </>

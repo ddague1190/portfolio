@@ -6,15 +6,15 @@ thumbnailUrl: "/images/dropdown.png"
 tags: ["functions", "javascript"]
 ---
 
-# Implementing multiple linked dropdowns
+# Implementing multiple, linked dropdowns
 
 <br />
 
-Effectively managing the variations of products in an e-commerce store is one of most important parts of its design. Inundating the customer with too many options at once for any single product would be a bad idea. 
+Effectively managing the variations of products in an e-commerce store is one of the most important parts of its design. Inundating the customer with too many options at once for any single product would be a bad idea. 
 
-Amazon's option selection feature hides product variants that are out of stock dynamically. As you select options, the choices available are filtered out. The button or dropdown for a specific variant is disable or a visual flag is shown to indicate that the option cannot be ordered.
+Amazon's option selection feature hides product variants that are out of stock dynamically. As you select options, the choices available are filtered out. The button or dropdown for a specific variant is disabled or a visual flag is shown to indicate that the option cannot be ordered.
 
-This article intends to precipitate the simple logic and filters behind such a system. I will show how my first solution works. Then we can analyze and improve the code.
+The objective of this article is to precipitate the simple logic and filters behind such a system. I will show how my first solution works. Then we can analyze and improve the code.
 
 ## Setting product attributes
 
@@ -42,9 +42,9 @@ const product = {
 
 </SyntaxHighlighter>
 
-Products in my application come in a few varieties with respect to complexity of the variations offered. They can have no options, just a **Type**, a **Type and Pack**, or a **Type, Pack, and Material**. This is held in a 'whichType' component level state.
+Products in my application come in a few varieties with respect to the complexity of the variations offered. They can have no options, just a **Type**, a **Type and Pack**, or a **Type, Pack, and Material**. The specific variety is stored in the 'whichType' variable.
 
-Let's set this up. Here is some state for our Dropdown component (which - to put in context - is being fed product variants on a product details page) is mounted.
+Let's set this up. Here is some state for our Dropdown component (which - to put in context - is being fed product variants on a product details page):
 
 <SyntaxHighlighter language="javascript">
   {`
@@ -90,7 +90,7 @@ For extra feedback, I customized the styling with an additional value which will
 
 ## Getting the currently selected variant at the end
 
-Our react-select setup consists of a dropdown for each _hasPackOptions_, _hasTypeOptions_, and _hasMaterialOptions_. A product can have 0 or more of these. Each currently selected value of the dropdown is controlled with its own component state. Lastly, when all of the dropdowns are selected then we show the user the current variant. (There is also logic for currently selected image - which may become narrowed down to 1 option prior to the specific current variant becoming know. We will leave this out for now. )
+Our react-select setup consists of a (controlled in the React sense) dropdown for each _hasPackOptions_, _hasTypeOptions_, and _hasMaterialOptions_. A product can have 0 or more of these. When all of the dropdowns are selected, then we show the user the current variant. (There is also logic for currently selected image - which may become narrowed down to 1 option prior to the specific current variant becoming known. We will leave detail out.)
 
 Here is the state for this:
 
@@ -170,7 +170,7 @@ useEffect(() => {
 
 This all works as planned but we still need to present the user with right options for the level of selection they are in. If they have selected just a product type, and the product has a whichType equal to 'typePackMaterial', then we need to filter out products whose type is not equal to the currently selected type. These will run on each re-render.
 
-For example, if a product is of type 'typeAndPack', and the user has just selected a type, we collect all variants that are of that type. Minor details here are too only show the 'packsize value' and only show one example of any single 'packsize value'.
+For example, if a product is of type 'typeAndPack', and the user has just selected a type, we collect all variants that are of that type. Minor details here are too only 'collect' the 'packsize value' and only show one example of any single 'packsize value'.
 
 <SyntaxHighlighter language="javascript">
   {`
@@ -242,9 +242,9 @@ The final result in on my page looks something like this.
 
 ## Analysis
 
-An easy to grab improvement on this code would be to memoize the material and pack options whenever they are determined for by a type selection. This would reduce the number of calculations. 
+An easy-to-grab improvement on this code would be to memoize the material and pack options whenever they are determined for a type selection. This would reduce the number of calculations. 
 
-In the database, these product variations are simply held as a list. Although the data is normalized in the proper SQL sense, I believe the code smell from all these boolean comparisons originations from the non-ideal storage in the database. A better data structure for the products I am presenting would be lists within lists or an acyclic, disconnected graph. At least with respect to parsing the data in these dropdowns. In other areas of this e-commerce platform - even within this component - such a non-linear data structure would have the opposite effect on effeciency. Practically speaking, for a product with a whichType equal to 'typePackMaterial' we could have something like:
+In the database, these product variations are simply held as a list. Although the data is normalized in the proper SQL sense, I believe the code smell from all these boolean comparisons originates from non-ideal storage in the database. A better data structure for the products I am presenting would be lists within lists or an acyclic, disconnected graph. At least with respect to parsing the data for display in the dropdowns. In other areas of this e-commerce platform - even other areas within this same page - such a non-linear data structure would have the opposite effect on efficiency. Practically speaking, for a product with a whichType equal to 'typePackMaterial' we could have something like:
 
 <SyntaxHighlighter language="javascript">
   {`
@@ -286,4 +286,6 @@ const product = {
 </SyntaxHighlighter>
 
 
-I herein am led to believe that the only meaningful improvement on the code can come from mimicing the directional flow of the heirarchical structure above in the methods used to parse the list. The simplist way would be to turn the product.variants list into nested lists. Here I am desirous of a useReducer hook which takes in our list as the initial state and then issues us a dispatcher which we can link to the onChange property of the dropdowns. I think that would be the best easy grab solution and one not very hard at that.
+I herein am led to believe that the only meaningful improvement on the code can come from mimicking the directional flow of the hierarchical structure above in the methods used to parse the list. The simplest way would be to turn the product variants list into nested lists. Here I am thinking of a useReducer hook which takes in our list as its initial state. The hook would re-organize the state into the easy to parse hierarchy and simply traverse the tree via the the dispatch function it issues us. We can link the dispatchers to the onChange property of the dropdowns. 
+
+Thank you for reading.

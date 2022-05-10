@@ -43,7 +43,7 @@ const TrainingPurposes = () => {
                     </dt>
                     <dd
                         onClick={setLink.bind(null, TINY_SHELTER_ARCHIVE)}
-                        className="group p-6 relative flex flex-col cursor-pointer"
+                        className="group p-6 relative flex flex-col"
                     >
                         <span className="text-2xl sm:text-4xl pt-2 text-white font-extrabold">Tiny shelter archive</span>
                         <ul className="text-left text-gray-300">
@@ -56,7 +56,7 @@ const TrainingPurposes = () => {
                     </dd>
                     <dd
                         onClick={setLink.bind(null, STONETHRONE)}
-                        className="group p-6 relative flex flex-col cursor-pointer">
+                        className="group p-6 relative flex flex-col">
                         <span className="text-2xl sm:text-4xl pt-2 text-white font-extrabold">Stonethrone</span>
                         <ul className="text-left text-gray-300">
                             <li className="translate-x-4">A Django and pure JS website</li>

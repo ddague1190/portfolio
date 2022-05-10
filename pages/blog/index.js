@@ -30,9 +30,9 @@ export default function BlogHome({ posts }) {
             <dt className="text-3xl tracking-widest font-light py-2">
               posts
             </dt>
-            <dd className="py-2 text-white font-extrabold">
+            <dd className="py-2 text-white font-extrabold text-2xl lg:text-4xl">
               {posts.map((post, index) => (
-                <Link className="text-2xl lg:text-4xl" href={`blog/${post.slug}`} key={index}>{post.frontMatter.title}</Link>
+                <Link  href={`blog/${post.slug}`} key={index}>{post.frontMatter.title}</Link>
               ))}
             </dd>
           </dl>

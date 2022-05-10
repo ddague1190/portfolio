@@ -55,7 +55,7 @@ const PostPage = ({ source, frontMatter }) => {
         return addOverflowHidden
       }, [])
     return (
-        <div className="pt-20 pb-20 bg-gray-200">
+        <div className="pt-20 pb-20 bg-white">
         <div className="prose mx-10 max-w-4xl lg:mx-auto ">
             <MDXRemote {...source} components={{ SyntaxHighlighter }} />
         </div>

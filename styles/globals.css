@@ -14,7 +14,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: #0c0f13;
+  background: black;
   /* overflow: hidden; */
   font-family: "Sulphur Point", sans-serif;
   color: #8b8b8b;
@@ -144,3 +144,4 @@ canvas {
   position: fixed;
   top: 0;
 }
+

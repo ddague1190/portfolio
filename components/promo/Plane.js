@@ -5,14 +5,14 @@ import "./CustomMaterial"
 import { useBlock } from "../utilities/Blocks"
 import state from "../../store"
 
-const Plane = forwardRef(({ color = "white", shift = 1, opacity = 1, args, map, ...props }, ref) => {
+const Plane = forwardRef(({ color = "white", shift = 1, opacity = 1, args, map, materialShift, ...props }, ref) => {
 
   const { viewportHeight, offsetFactor } = useBlock()
   const material = useRef()
   let last = state.top.current
   useFrame(() => {
     const { pages, top } = state
-    // material.current.scale = lerp(material.current.scale, offsetFactor - top.current / ((pages - 1) * viewportHeight), 0.1)
+    if(materialShift) material.current.scale = lerp(material.current.scale, offsetFactor - top.current / ((pages - 1) * viewportHeight), .1)
     material.current.shift = lerp(material.current.shift, ((top.current - last) / shift) * 1.5, 0.1)
     last = top.current
   })
