@@ -50,13 +50,11 @@ export default function FishNStik() {
               passHref
               href='https://fishnstik.herokuapp.com/'
             >
-              <a
-                target="_blank"
-                rel="noreferrer"
-                className="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring--500 focus:border--500"
+              <span
+                className="cursor-pointer -ml-px relative inline-flex items-center px-4 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring--500 focus:border--500"
               >
-                Link to website
-              </a>
+                Go to website
+              </span>
             </Link>
 
           </span>

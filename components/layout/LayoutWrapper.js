@@ -7,6 +7,10 @@ import { useRouter } from "next/router"
 
 const LayoutWrapper = ({ children }) => {
     const router = useRouter()
+    const useLight = router.pathname === '/' ||
+        router.pathname === '/projects' ||
+        router.pathname === '/blog' ||
+        router.pathname === '/projects/trainingpurposes'
 
     return (
         <SectionContainer>
@@ -19,7 +23,7 @@ const LayoutWrapper = ({ children }) => {
                                     <Link
                                         key={link.title}
                                         href={link.href}
-                                        className={`p-1 font-extrabold text-xl tracking-wider  ${router.route === link.href ? 'text-gray-300 select-text tracking-tighter ':'text-gray-500'} hover:scale-[1.01] hover:text-gray-400 sm:p-4`}
+                                        className={`p-1 font-extrabold lg:text-2xl text-xl tracking-wider  ${router.pathname === link.href ? 'text-blue-500 select-text tracking-tighter ' : (useLight ? 'text-gray-200' : 'text-gray-600')} hover:scale-[1.01] sm:p-4`}
                                     >
                                         {link.title}
                                     </Link>
@@ -31,7 +35,6 @@ const LayoutWrapper = ({ children }) => {
                     </header>
                 </Portal>
                 <main className="mb-auto">{children}</main>
-                {/* <Footer /> */}
             </div>
         </SectionContainer>
     )

@@ -9,7 +9,6 @@ export default function VideoParagraph({ image, index, offset, factor, header, a
     const { contentMaxWidth: w, canvasWidth, margin, mobile, viewportWidth } = useBlock()
     const size = aspect < 1 && !mobile ? .65 : 1
     const alignRight = (canvasWidth - w * size - margin) / 2
-    const pixelWidth = w * state.zoom * size
     const left = !(index % 2)
 
 
@@ -30,12 +29,12 @@ export default function VideoParagraph({ image, index, offset, factor, header, a
                 </Html>
                 <Html position={[w > 8 ? -3 : -1.5, 1.5, 0]}>
                     <div className='absolute z-50 ml-3 mt-5 sm:flex-row -translate-x-20 items-center flex gap-2 flex-col w-max'>
-                        <div id='href:/projects/fishnstik' className="cursor-pointer font-extrabold tracking-tighter bg-white inline-flex items-center px-8 py-4 border border-black  text-lg lg:text-2xl rounded-md shadow-sm text-black bg-opacity-30 focus:outline-none focus:ring-2 focus:ring-offset-2"
+                        <div id='href:/projects/fishnstik' className="cursor-pointer font-extrabold tracking-tighter bg-white inline-flex items-center px-8 py-4 border border-black  text-lg lg:text-2xl rounded-md shadow-sm text-black bg-opacity-60 focus:outline-none focus:ring-2 focus:ring-offset-2"
                         >
                             See FishNStik details
 
                         </div>
-                        <div id='href:/projects/' className="cursor-pointer font-bold tracking-tighter inline-flex items-center px-4 py-2 border border-gray-700 text-lg w-max lg:text-xl rounded-md shadow-sm text-gray-700 bg-white bg-opacity-30  focus:outline-none focus:ring-2 focus:ring-offset-2"
+                        <div id='href:/projects/' className="cursor-pointer font-bold tracking-tighter inline-flex items-center px-4 py-2 border border-gray-700 text-lg w-max lg:text-xl rounded-md shadow-sm text-gray-700 bg-white bg-opacity-60  focus:outline-none focus:ring-2 focus:ring-offset-2"
                         >
                             See all projects
 
@@ -49,7 +48,7 @@ export default function VideoParagraph({ image, index, offset, factor, header, a
                     <Text left={left} right={!left} size={w * .04} color="white" top position={[((left ? -w : w) * size) / 2 + .5, (w * size) / aspect / 2 + 0.5, -1]}>
                         {header}
                     </Text>
-                    <directionalLight color='blue' position={[100, -100, 0]} intensity={50} />
+                    <directionalLight color='blue' position={[100, -100, 10]} intensity={20} />
 
                 </group>
 

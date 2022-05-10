@@ -33,7 +33,7 @@ const About = () => {
             <Head>
 
             </Head>
-            <main className="max-w-4xl lg:mx-auto mx-10 mt-20 mb-20 " itemScope itemType="http://schema.org/Person">
+            <main className="max-w-4xl lg:mx-auto mx-5 mt-20 mb-20 " itemScope itemType="http://schema.org/Person">
                 <header className=''>
                     <h1 className="tracking-tighter font-extrabold text-2xl mb-2">Darryl Dague</h1>
 

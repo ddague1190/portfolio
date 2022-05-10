@@ -37,7 +37,7 @@ export default function Hard({ image, index, offset, factor, header, aspect, tex
             <group position={[left ? -alignRight : alignRight, 0, 0]}>
 
 
-                <Plane map={image} args={[1, 1, 32, 32]} shift={50} size={size} aspect={aspect} scale={[w * size, (w * size) / aspect, 1]} frustumCulled={false} />
+                <Plane map={image} args={[1, 1, 32, 32]} shift={40} size={size} aspect={aspect} scale={[w * size, (w * size) / aspect, 1]} frustumCulled={false} />
                 <Html
                     style={{ width: '100vw', pointerEvents: 'none', textAlign: left ? "left" : "right", fontSize: '20px' }}
                     position={[left || mobile ? -w+ correctionSkillsX  : - w-2, (-w * size) / 2 / aspect - 2, 1]}

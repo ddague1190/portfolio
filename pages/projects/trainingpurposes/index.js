@@ -46,11 +46,11 @@ const reducer = (state, action) => {
             copy[action.whichLink]['show'] = false
             return copy
 
+        case 'reset':
+            return initial_state
 
         default:
             return state
-
-
     }
 }
 
@@ -124,7 +124,7 @@ const TrainingPurposes = () => {
                         <span className="text-2xl sm:text-4xl pt-2 font-extrabold">Article 1</span>
                         <ul className="text-left text-gray-300">
                             <li className="translate-x-4">An adventure in BEM and SASS</li>
-                            <li className="translate-x-8 text-blue-300">Parallels between NASA Voyager and Kawasaki Voyager</li>
+                            <li className="translate-x-8 text-blue-300 ">Parallels between NASA Voyager <br className="block sm:hidden"/> <span className='pl-5 sm:pl-0'>and Kawasaki Voyager</span></li>
                         </ul>
                         {state[ARTICLE_1]['show'] &&
                             <GitHubButton links={state[ARTICLE_1]['links']} />
