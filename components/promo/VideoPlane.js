@@ -21,7 +21,7 @@ const VideoPlane = forwardRef(({ color = "white", shift = 1, opacity = 1, args, 
         <mesh ref={ref} {...props}>
             <planeBufferGeometry args={args} />
             <customMaterial ref={material} color={color} transparent opacity={opacity}>
-                <videoTexture attach="map" args={[video]} encoding={THREE.sRGBEncoding} />
+                <videoTexture attach="map" args={[video]}  />
             </customMaterial>
         </mesh>
     )
