@@ -31,7 +31,7 @@ export default function Content() {
       texture.needsUpdate = true
     }
     (texture.minFilter = LinearFilter)
-  }, [images]))
+  }), [images])
   const { contentMaxWidth: w, canvasWidth, canvasHeight, mobile } = useBlock()
   const sizeFactor = !mobile ? 0.06 : 0.06
   const unCorrectedOffset = 3.2
@@ -49,7 +49,7 @@ export default function Content() {
         </Block>
         <Block factor={1.0}>
           <Html className="bottom-left pointer-events-none" style={{ color: "white" }} position={[-canvasWidth / 2, -canvasHeight / 2, 0]}>
-            <div className="text-4xl w-max font-extrabold text-white tracking-tighter mb-5">Darryl Dague's portfolio</div>
+            <div className="text-4xl w-max font-extrabold text-white tracking-tighter mb-5">{`Darryl Dague's portfolio`}</div>
             <div className="text-2xl w-max font-light"> -front-end focused,{mobile ? <br /> : ""} full-stack web developer.</div>
           </Html>
         </Block>

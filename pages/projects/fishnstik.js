@@ -29,7 +29,8 @@ export default function FishNStik() {
 
           <span className="relative z-0 py-6 inline-flex rounded-md">
             <a
-            target="_blank"
+              rel="noopener noreferrer"
+              target="_blank"
               href='https://github.com/ddague1190/fishnstik_app'
               type="button"
               className="font-extrabold relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring--500 focus:border--500"
@@ -39,6 +40,7 @@ export default function FishNStik() {
             </a>
 
             <a
+              rel="noopener noreferrer"
               target="_blank"
               href='https://fishnstik.herokuapp.com/'
               type="button"
@@ -52,7 +54,7 @@ export default function FishNStik() {
             This store was built from first principles over a few iterations. It is full-featured enough that I learned how to manage a complex project.
           </p>
           <p className="mt-4 text-gray-500 mb-2 leading-4">
-            An example of the level of detail achieved is the checkout process, wherein an order can be made without advanced payment. Once the items have been manufactured or the order is otherwise fulfilled, then the customer pays for the items and they will be shipped. This model allows for pricing adjustments and indefinite delays that are inherent to the business. 
+            An example of the level of detail achieved is the checkout process, wherein an order can be made without advanced payment. Once the items have been manufactured or the order is otherwise fulfilled, then the customer pays for the items and they will be shipped. This model allows for pricing adjustments and indefinite delays that are inherent to the business.
           </p>
 
 
@@ -76,7 +78,7 @@ export default function FishNStik() {
           <iframe id="ytplayer" type="text/html" className="mx-auto w-full aspect-video"
             src="https://www.youtube.com/embed/pnPMv9FVGdE?autoplay=1&origin=http://example.com"
             frameBorder="0"></iframe>
-        
+
         </div>
       </div>
     </div>

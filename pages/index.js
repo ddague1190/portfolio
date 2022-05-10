@@ -48,7 +48,7 @@ export default function Home() {
         return () => {
             removeEventListener('click', goToBuildPage)
         }
-    }, [])
+    }, [router])
     const scrollArea = useRef()
     const onScroll = (e) => (state.top.current = e.target.scrollTop)
     useEffect(() => void onScroll({ target: scrollArea.current }), [])
