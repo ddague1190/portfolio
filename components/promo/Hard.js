@@ -6,6 +6,7 @@ import state from "../../store";
 import fonts from "../utilities/fonts";
 import { nexticon } from "../utilities/icons";
 import styled from 'styled-components';
+
 const DD = styled.dd`
 position: relative;
 color: #f3f4f6;

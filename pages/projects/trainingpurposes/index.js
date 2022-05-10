@@ -22,14 +22,11 @@ const links = {
 const TrainingPurposes = () => {
 
 
-    const [whichLink, setLink] = useState('')
 
     useEffect(() => {
-        window.addEventListener('focus', setLink.bind(null, ''))
         removeOverflowHidden()
         return (() => {
             addOverflowHidden()
-            removeEventListener('focus', setLink.bind(null, ''))
         })
     }, [])
 
@@ -42,7 +39,7 @@ const TrainingPurposes = () => {
                         More developed
                     </dt>
                     <dd
-                        onClick={setLink.bind(null, TINY_SHELTER_ARCHIVE)}
+                        // onClick={setLink.bind(null, TINY_SHELTER_ARCHIVE)}
                         className="group p-6 relative flex flex-col"
                     >
                         <span className="text-2xl sm:text-4xl pt-2 text-white font-extrabold">Tiny shelter archive</span>
@@ -50,20 +47,20 @@ const TrainingPurposes = () => {
                             <li className="translate-x-4">A pure Django application</li>
                             <li className="translate-x-8 text-blue-300">A campervan database</li>
                         </ul>
-                        <div className={`${whichLink === CALCULATOR ? 'block' : 'hidden'} group-hover:block`}>
-                            <GitHubButton setLink={setLink} links={links[whichLink]} youTubeLink='https://www.youtube.com/watch?v=4d0LN69pRQw' />
+                        <div className={`hidden group-hover:block`}>
+                            <GitHubButton links={links[TINY_SHELTER_ARCHIVE]} youTubeLink='https://www.youtube.com/watch?v=4d0LN69pRQw' />
                         </div>
                     </dd>
                     <dd
-                        onClick={setLink.bind(null, STONETHRONE)}
+                        // onClick={setLink.bind(null, STONETHRONE)}
                         className="group p-6 relative flex flex-col">
                         <span className="text-2xl sm:text-4xl pt-2 text-white font-extrabold">Stonethrone</span>
                         <ul className="text-left text-gray-300">
                             <li className="translate-x-4">A Django and pure JS website</li>
                             <li className="translate-x-8 text-blue-300">An online hat store</li>
                         </ul>
-                        <div className={`${whichLink === STONETHRONE ? 'block' : 'hidden'} group-hover:block`}>
-                            <GitHubButton setLink={setLink} links={links[whichLink]} youTubeLink='https://www.youtube.com/watch?v=Ssd09_FMGRo' />
+                        <div className={`hidden group-hover:block`}>
+                            <GitHubButton links={links[STONETHRONE]} youTubeLink='https://www.youtube.com/watch?v=Ssd09_FMGRo' />
                         </div>
                     </dd>
                 </dl>
@@ -74,29 +71,29 @@ const TrainingPurposes = () => {
                         Minor works
                     </dt>
                     <dd
-                        onClick={setLink.bind(null, CALCULATOR)}
+                        // onClick={setLink.bind(null, CALCULATOR)}
                         className="group p-6 relative"
                     >
                         <span className=" text-2xl sm:text-4xl pt-2 font-extrabold">Pure JS Calculator</span>
-                        <div className={`${whichLink === CALCULATOR ? 'block' : 'hidden'} group-hover:block`}>
-                            <GitHubButton setLink={setLink} links={links[whichLink]} />
+                        <div className={`hidden group-hover:block`}>
+                            <GitHubButton links={links[CALCULATOR]} />
                         </div>
                     </dd>
                     <dd
-                        onClick={setLink.bind(null, ARTICLE_1)}
+                        // onClick={setLink.bind(null, ARTICLE_1)}
                         className="group p-6 relative">
                         <span className="text-2xl sm:text-4xl pt-2 font-extrabold">Article 1</span>
                         <ul className="text-left text-gray-300">
                             <li className="translate-x-4">An adventure in BEM and SASS</li>
                             <li className="translate-x-8 text-blue-300">Cosmic motorcyclism</li>
                         </ul>
-                        <div className={`${whichLink === ARTICLE_1 ? 'block' : 'hidden'} group-hover:block`}>
-                            <GitHubButton setLink={setLink} links={links[whichLink]} />
+                        <div className={`hidden group-hover:block`}>
+                            <GitHubButton links={links[ARTICLE_1]} />
                         </div>
                     </dd>
                     <dd
 
-                        onClick={setLink.bind(null, ARTICLE_2)}
+                        // onClick={setLink.bind(null, ARTICLE_2)}
                         className="group p-6 relative"
                     >
                         <span className="text-2xl sm:text-4xl pt-2 font-extrabold">Article 2</span>
@@ -104,8 +101,8 @@ const TrainingPurposes = () => {
                             <li className="translate-x-4">An adventure in BEM and SASS</li>
                             <li className="translate-x-8 text-blue-300">Native American Plains Culture </li>
                         </ul>
-                        <div className={`${whichLink === ARTICLE_2 ? 'block' : 'hidden'} group-hover:block`}>
-                            <GitHubButton setLink={setLink} links={links[whichLink]} />
+                        <div className={`hidden group-hover:block`}>
+                            <GitHubButton links={links[ARTICLE_2]} />
                         </div>
                     </dd>
                 </dl>
