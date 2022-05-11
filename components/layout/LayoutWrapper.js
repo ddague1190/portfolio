@@ -5,7 +5,11 @@ import MobileNav from './MobileNav'
 import Portal from "../utilities/Portal"
 import { useRouter } from "next/router"
 
+
 const LayoutWrapper = ({ children }) => {
+
+
+
     const router = useRouter()
     const useLight = router.pathname === '/' ||
         router.pathname === '/projects' ||

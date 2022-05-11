@@ -7,6 +7,9 @@ import { useAsset } from "use-asset"
 import lerp from "lerp"
 import state from "../../store";
 
+
+
+
 class TextGeometry extends THREE.ExtrudeGeometry {
 
   constructor(text, parameters = {}) {

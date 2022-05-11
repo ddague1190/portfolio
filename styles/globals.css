@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'FuturaStd';
+  src: url("/FuturaStd-Medium.woff");
+}
 
 *,
 *::after,
@@ -16,7 +20,7 @@ body {
   padding: 0;
   background: black;
   /* overflow: hidden; */
-  font-family: "Sulphur Point", sans-serif;
+  font-family: 'FuturaStd';
   color: #8b8b8b;
   font-size: 0.9rem;
 }
@@ -102,7 +106,7 @@ canvas {
 }
 
 #root > div > div {
-  /* pointer-events: none; */
+  pointer-events: none;
 }
 
 @media screen and (min-width: 53em) {
@@ -145,3 +149,5 @@ canvas {
   z-index: 10000000000;
   top: 0;
 }
+
+

@@ -15,20 +15,21 @@ export const ExperimentalVideoPlane = forwardRef(({ color = "white", shift = 1, 
       vid.crossOrigin = "Allow-Origin";
       vid.loop = vid.muted = vid.playsInline = true;
       vid.play();
+      vid.encoding = THREE.sRGBEncoding;
       material.current.map = new THREE.VideoTexture(vid);
-    //   meshRef.current.material.map = 
     });
+    let last = state.top.current
 
     useFrame(() => {
         const { pages, top } = state
-        // material.current.shift = lerp(material.current.shift, ((top.current - last) / shift) * 1.5, 0.1)
-        // last = top.current
+        material.current.shift = lerp(material.current.shift, ((top.current - last) / shift) * 1.5, 0.1)
+        last = top.current
     })
 
     return (
       <mesh ref={meshRef} {...props}>
-        <planeGeometry attach="geometry" />
-        <customMaterial ref={material} color={color} transparent opacity={opacity} />
+        <planeGeometry attach="geometry" args={args} />
+        <customMaterial ref={material}  />
       </mesh>
     );
   });
