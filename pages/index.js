@@ -33,13 +33,16 @@ export default function Home() {
         const goToBuildPage = (e) => {
             e.preventDefault();
 
-            if (e.target.id === 'href:/projects/fishnstik') {
+            if (e.target.id === '01') {
                 router.push('/projects/fishnstik')
             }
             else if (e.target.id === 'href:/projects/') {
                 router.push('/projects')
             }
             else if (e.target.id === 'href:/about') {
+                router.push('/about')
+            }
+            else if (e.target.id === '03') {
                 router.push('/about')
             }
 

@@ -2,6 +2,7 @@ import { createRef } from "react"
 import { Vector3 } from "three"
 
 const state = {
+  boldColor:'#43bdff',
   sections: 4,
   pages: 4,
   zoom: 75,
@@ -9,15 +10,16 @@ const state = {
     {
       offset: 1,
       factor: 2,
-      header: "Featured Project",
-      image: "/images/calculator.png",
+      header: "featured project",
+      image: "",
       aspect: 1.8,
-      text: "An e-commerce platform built for local tackle supply company. Built with Django and React."
+      text: "An e-commerce platform.",
+      text2: "Built with Django and React."
     },
     { 
       offset: 2,
       factor: 2.25,
-      header: "Hard skills",
+      header: "",
       image: "/langicons.png",
       aspect: 1.5,
       text:
@@ -27,7 +29,7 @@ const state = {
       offset: 3 ,
       factor: 2.5,
       header: "Get in touch",
-      image: "/images/calculator.png",
+      image: "",
       aspect: 1.5037,
       text:
         ""
@@ -35,7 +37,7 @@ const state = {
 
   ],
   stripes: [
-    { offset: 0, color: "#a1a1a1", height: 5 },
+    { offset: 0, color: "#black", height: 5 },
     { offset: 3, color: "white", height: 20 }
   ],
   diamonds: [

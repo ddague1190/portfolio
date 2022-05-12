@@ -2,7 +2,7 @@ import Link from "next/link"
 import { useEffect, useRef } from "react"
 import { removeOverflowHidden, addOverflowHidden } from "../../lib/homeOverflowStyles"
 const features = [
-  { name: 'Tailwind CSS', description: "I focused for a while on strict adherence BEM and a 7-1 SASS architecture. In React projects, this approach feels sub-optimal. Tailwind feels extremly fast for simple layouts. (There exists an entire build of this site in another theme using BEM and global scoped style sheets)." },
+  { name: 'Tailwind CSS', description: "I focused for a while on strict adherence BEM and a 7-1 SASS architecture. In React projects, this approach feels sub-optimal. Tailwind feels convenient for simple mock-ups.  (There exists an entire build of this site in another theme using BEM and global scoped style sheets)." },
   { name: 'Django with Django Rest Framework', description: 'I enjoy working in Python. Django is very easy to extend.' },
   { name: 'React', description: "My recent past can be chronologically and spiritually divided into 'before React' and 'after React'" },
   { blogTitle: 'Filtering with Dropdowns', blogLink: '/blog/filter-logic-dropdowns', name: 'Notable Tools', description: 'Redux, JWT, Axios, Framer-Motion, React-Select' },
@@ -20,7 +20,7 @@ export default function FishNStik() {
 
 
   return (
-    <div className="bg-white">
+    <div className="text-base lg:text-lg">
       <div className="max-w-2xl mx-auto py-24 px-4 grid items-center grid-cols-1 gap-y-16 gap-x-8 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 lg:grid-cols-2">
 
         <div>
@@ -59,42 +59,43 @@ export default function FishNStik() {
 
           </span>
 
-          <p className="mt-4 text-gray-500 mb-2 leading-4">
+          <p className="mt-4 leading-6  text-gray-500 mb-2 ">
             This store was built from first principles over a few iterations. It is full-featured enough that I learned how to manage a complex project.
           </p>
-          <p className="mt-4 text-gray-500 mb-2 leading-4">
+          <p className="mt-4 leading-6 text-gray-500 mb-2 ">
             An example of the level of detail achieved is the checkout process, wherein an order can be made without advanced payment. Once the items have been manufactured or the order is otherwise fulfilled, then the customer pays for the items and they will be shipped. This model allows for pricing adjustments and indefinite delays that are inherent to the business.
           </p>
 
 
-          <section className="text-black mt-8">
-            <h1 className="text-2xl text-blue-500">Reflections</h1>
-
-            <dl className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-              {features.map((feature) => (
-                <div key={feature.name} className="border-t border-gray-200 pt-4">
-                  <dt className="font-medium text-gray-900">{feature.name}</dt>
-                  <dd className="mt-2 text-sm text-gray-500 leading-4">{feature.description}</dd>
-                  {feature.blogTitle && <dd className='text-xs mt-4 w-26 font-semibold text-blue-500 '><Link href={feature.blogLink}>{`See my post on ${feature.blogTitle}`}</Link></dd>}
-                </div>
-              ))}
-            </dl>
-          </section>
 
         </div>
         <div className="flex justify-center items-center w-full">
           <video controls width="">
 
-              
-              <source src="https://d3f2mb23naggdc.cloudfront.net/fishnstik_demo.mp4"
-                type="video/mp4"/>
 
-                Sorry, your browser does not support embedded videos.
-              </video>
+            <source src="https://d3f2mb23naggdc.cloudfront.net/fishnstik_demo.mp4"
+              type="video/mp4" />
 
-              
-            </div>
+            Sorry, your browser does not support embedded videos.
+          </video>
+
+
         </div>
+        <section className="text-black mt-8 col-start-1 col-span-full">
+          <h1 className="text-2xl text-blue-500">Reflections</h1>
+
+          <dl className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
+            {features.map((feature) => (
+              <div key={feature.name} className="border-t border-gray-200 pt-4">
+                <dt className="font-base text-gray-900">{feature.name}</dt>
+                <dd className="mt-2 text-sm text-gray-500 ">{feature.description}</dd>
+                {feature.blogTitle && <dd className='text-xs mt-4 w-26 font-semibold text-blue-500 '><Link href={feature.blogLink}>{`See my post on ${feature.blogTitle}`}</Link></dd>}
+              </div>
+            ))}
+          </dl>
+        </section>
+
       </div>
-      )
+    </div>
+  )
 }

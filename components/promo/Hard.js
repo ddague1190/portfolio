@@ -7,7 +7,9 @@ import styled from 'styled-components';
 
 const DD = styled.dd`
 position: relative;
-color: #f3f4f6;
+font-size: 1.2rem;
+line-height: 1.4rem;
+color: #5a5a5a;
 &::before {
     content: '';
     position: absolute;
@@ -16,7 +18,7 @@ color: #f3f4f6;
     transform: translate(0, -50%);
     width: 4px;
     height: 4px;
-    background-color: #f3f4f6;
+    background-color: #43bdff;
     border-radius: 50%;
 }
 `
@@ -25,13 +27,12 @@ color: #f3f4f6;
 export default function Hard({ image, index, offset, factor, header, aspect, text }) {
 
 
-
     const { contentMaxWidth: w, canvasWidth, margin, mobile, viewportWidth } = useBlock()
     const size = aspect < 1 && !mobile ? 0.65 : 1
     const alignRight = (canvasWidth - w * size - margin) / 2
     const pixelWidth = w * state.zoom * size
     const left = !(index % 2)
-    const correctionSkillsX = w > 7.8 ? 2.5 : w > 5.75 ? 1.5 : 1
+    const correctionSkillsX = w > 7.8 ? 1.5 : w > 5.75 ? 1.8 : w > 4.3 ? 1.3 : 1
     return (
         <Block factor={factor} offset={offset}>
             <group position={[left ? -alignRight : alignRight, 0, 0]}>
@@ -40,23 +41,21 @@ export default function Hard({ image, index, offset, factor, header, aspect, tex
                 <Plane map={image} args={[1, 1, 32, 32]} shift={40} size={size} aspect={aspect} scale={[w * size, (w * size) / aspect, 1]} frustumCulled={false} />
                 <Html
                     style={{ width: '100vw', pointerEvents: 'none', textAlign: left ? "left" : "right", fontSize: '20px' }}
-                    position={[left || mobile ? -w+ correctionSkillsX  : - w-2, (-w * size) / 2 / aspect - 2, 1]}
+                    position={[left || mobile ? -w + correctionSkillsX : - w - 2, (-w * size) / 2 / aspect - 3, 1]}
                 >
 
                     <section className='text-xl sm:text-2xl lg:text-3xl overflow-visible flex flex-col relative py-12' >
                         <dl className="text-gray-50">
-                            <dt className="mt-6 font-extrabold text-blue-200 tracking-tighter">Technologies</dt>
-                            <DD>Semantic HTML</DD>
-                            <DD>Maintainable CSS </DD>
-                            <DD>React</DD>
-                            <DD>Django</DD>
-                            <DD>Related frameworks (see CV)</DD>
-                            <dt className="mt-6 font-extrabold text-blue-200 tracking-tighter">Near-term targets for skills expansion</dt>
-                            <DD>Node</DD>
+                            <dt className="mt-10 font-extrabold text-[#43bdff] tracking-tighter">Languages</dt>
+                            <DD>HTML</DD>
+                            <DD>CSS</DD>
+                            <DD>Python</DD>
+                            <DD>Javascript</DD>
+                            <dt className="mt-10 font-extrabold text-[#43bdff] tracking-tighter">Near-term targets for growth</dt>
                             <DD>Typescript</DD>
+                            <DD>Node backend</DD>
                             <DD>WebGL</DD>
-                            <DD>Algorithms</DD>
-                            <DD>Finding a web dev position</DD>
+                            <DD>Deeper study of Algorithms</DD>
 
                         </dl>
                     </section>

@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @font-face {
-  font-family: 'FuturaStd';
-  src: url("/FuturaStd-Medium.woff");
+  font-family: 'Galley';
+  src: url("/Montserrat-Regular.ttf");
 }
 
 *,
@@ -18,10 +20,13 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: black;
+  /* background-color: #f7f9fb; */
+  background-color: #fefefe;
+  /* background-color: #43bdff; */
+
   /* overflow: hidden; */
-  font-family: 'FuturaStd';
-  color: #8b8b8b;
+  font-family: 'Galley';
+  color: #333333;
   font-size: 0.9rem;
 }
 

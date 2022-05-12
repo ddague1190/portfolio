@@ -7,10 +7,7 @@ import Portal from "../utilities/Portal"
 const MobileNav = () => {
   const router = useRouter()
 
-  const useLight = router.pathname === '/' ||
-    router.pathname === '/projects' ||
-    router.pathname === '/blog' ||
-    router.pathname === '/projects/trainingpurposes'
+  const useLight = true
 
 
   const [navShow, setNavShow] = useState(false)
@@ -37,8 +34,7 @@ const MobileNav = () => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
-          fill={
-            useLight ? '#e1e1e1' : 'black'}
+          fill='#aaaaaa'
           className="text-gray-900 dark:text-gray-100"
         >
           {navShow ? (

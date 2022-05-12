@@ -1,9 +1,9 @@
 import { Block, useBlock } from "../utilities/Blocks"
-import { Html, Sky } from "@react-three/drei";
+import { Html } from "@react-three/drei";
 import Model from "../three/avatar/Anim_wave";
-import styled from 'styled-components';
 import { useRef } from "react";
-
+import { Text } from "./Text";
+import state from "../../store";
 
 export default function Soft({ image, index, offset, factor, header, aspect, text }) {
     const ref = useRef()
@@ -12,21 +12,14 @@ export default function Soft({ image, index, offset, factor, header, aspect, tex
 
     return (
         <Block factor={factor} offset={offset}>
-            <group position={[0,-2,0]}>
+            <group position={[0, -2, 0]}>
                 <mesh>
                     <Model scale={3.3} />
-                    <ambientLight intensity={.4} />
-                    <directionalLight position={[10, 10, 20]} />
-                    <Html
-                        className="text-right w-max"
-                        position={[-1.2, 2, 0]}
-                    >
+                    <ambientLight intensity={2} />
+                    <Text size={w * 0.05} position={[w/50, 2, 100]} color={state.boldColor}>
+                        contact/resume
+                    </Text>
 
-                        <button ref={ref} id='href:/about' className="font-bold tracking-tighter inline-flex items-center px-4 py-2 border border-transparent text-3xl rounded-md shadow-sm text-black bg-white focus:outline-none focus:ring-2 focus:ring-offset-2"
-                        >
-                            CV / Contact
-                        </button>
-                    </Html>
                 </mesh>
 
             </group>

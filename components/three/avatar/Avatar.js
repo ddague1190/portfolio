@@ -10,9 +10,9 @@ import VideoText from "./VideoText"
 
 export default function Scene() {
     return (
-        <Canvas   gl={{ alpha: false }} camera={{ position: [2, 1, 3], fov: 50 }}>
+        <Canvas   gl={{ alpha: false }} camera={{ position: [20, 1, 3], fov: 50 }}>
 
-          <directionalLight position={[10, 10, 50]} intensity={1} />
+          <directionalLight position={[10, 10, 50]} intensity={200} />
 
             <Model_wave  scale={3} position={[0,-5,0]}/>
 

@@ -6,7 +6,7 @@ import { useLoader, useFrame } from "@react-three/fiber"
 import { useAsset } from "use-asset"
 import lerp from "lerp"
 import state from "../../store";
-
+import { fontToDataURI } from "../../lib/fontLoader";
 
 
 
@@ -42,6 +42,7 @@ class TextGeometry extends THREE.ExtrudeGeometry {
 
 export function Text({ children, size = 1, left, right, top, bottom, color = "white", opacity = 1, height = 0.01, layers = 0, font = "fonts/helvetiker_regular.typeface.json", ...props }) {
   const data = useLoader(FontLoader, "/MOONGET_Heavy.blob")
+  // const data = fontToDataURI('/Galley.otf')
   const geom = useAsset(() => new Promise((res) => res(new TextGeometry(children, { font: data, size: 1, height, curveSegments: 32 }))), [children])
   const onUpdate = useCallback(
     (self) => {

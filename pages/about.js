@@ -11,9 +11,7 @@ const About = () => {
     useEffect(() => {
         removeOverflowHidden()
         document.body.style.fontSize = '100%'
-        document.body.style.backgroundColor = 'white'
         return (() => {
-            document.body.style.backgroundColor = 'black'
             addOverflowHidden()
         })
     }, [])
@@ -38,13 +36,13 @@ const About = () => {
                     <h1 className="tracking-tighter font-extrabold text-2xl mb-2">Darryl Dague</h1>
 
                     <dl className='flex items-center gap-4 w-full'>
-                        <div className="flex items-center gap-2 w-max text-left relative text-blue-400">
+                        <div className="flex items-center gap-2 w-max text-left relative">
                             <dt className="sr-only">
                                 Copy email:
                             </dt>
 
 
-                            <dd className="cursor-pointer inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-blue-400 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"
+                            <dd className="cursor-pointer inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-[#43bdff] hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"
                                 onClick={copyToClipboard.bind(null, 'ddague77@gmail.com')}>
                                 Copy email
                             </dd>
@@ -104,14 +102,12 @@ const About = () => {
                     <details className="mb-1" open>
                         <summary className="list-none font-semibold tracking-tighter">FishNStik
                             <a target="_blank" rel="noopener noreferrer" className='tracking-normal font-normal ml-1' href="https://fishnstik.herokuapp.com">(https://fishnstik.herokuapp.com)</a>
-                            <time className="float-right font-light text-gray-400">2022</time>
+                            <time className="float-right font-light">2022</time>
                         </summary>
                         <p className=""> </p>
                         <ul className="list-disc ml-3 tracking-tight">
-                            <li>FishNStik is an e-commerce platform built with React with Redux and Django with Django Rest Framework.</li>
-                            <li>Built specifically for the client business model, with a non-normal checkout flow and tiered discounts.</li>
-                            <li>Built and rebuilt - I gained a deep knowledge of React strengths and limitations
-                            </li>
+                            <li>An e-commerce platform built with React and Django.</li>
+                            <li>Built specifically for the business model of the client, it has a non-normal checkout flow and tiered discounts.</li>
                         </ul>
 
                     </details>

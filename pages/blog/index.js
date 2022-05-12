@@ -27,10 +27,10 @@ export default function BlogHome({ posts }) {
 
         <section className='py-5 w-max'>
           <dl >
-            <dt className="text-3xl tracking-widest font-light py-2">
+            <dt className="text-3xl text-gray-300 tracking-widest font-light py-2">
               posts
             </dt>
-            <dd className="py-2 text-white font-extrabold text-2xl lg:text-4xl">
+            <dd className="py-2  font-extrabold text-2xl lg:text-4xl">
               {posts.map((post, index) => (
                 <Link  href={`blog/${post.slug}`} key={index}>{post.frontMatter.title}</Link>
               ))}

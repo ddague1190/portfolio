@@ -77,8 +77,8 @@ const TrainingPurposes = () => {
                         onMouseLeave={dispatch.bind(null, { type: 'hide', whichLink: TINY_SHELTER_ARCHIVE })}
                         className="group p-6 relative flex flex-col"
                     >
-                        <span className="text-2xl sm:text-4xl pt-2 text-white font-extrabold">Tiny shelter archive</span>
-                        <ul className="text-left text-gray-300">
+                        <span className="text-2xl sm:text-4xl pt-2  font-extrabold">Tiny shelter archive</span>
+                        <ul className="text-left text-gray-500">
                             <li className="translate-x-4">A pure Django application</li>
                             <li className="translate-x-8 text-blue-300">A campervan database</li>
                         </ul>
@@ -91,8 +91,8 @@ const TrainingPurposes = () => {
                         onMouseEnter={dispatch.bind(null, { type: 'show', whichLink: STONETHRONE })}
                         onMouseLeave={dispatch.bind(null, { type: 'hide', whichLink: STONETHRONE })}
                         className="group p-6 relative flex flex-col">
-                        <span className="text-2xl sm:text-4xl pt-2 text-white font-extrabold">Stonethrone</span>
-                        <ul className="text-left text-gray-300">
+                        <span className="text-2xl sm:text-4xl pt-2 font-extrabold">Stonethrone</span>
+                        <ul className="text-left text-gray-500">
                             <li className="translate-x-4">A Django and pure JS website</li>
                             <li className="translate-x-8 text-blue-300">An online hat store</li>
                         </ul>
@@ -122,7 +122,7 @@ const TrainingPurposes = () => {
                         onMouseLeave={dispatch.bind(null, { type: 'hide', whichLink: ARTICLE_1 })}
                         className="group p-6 relative">
                         <span className="text-2xl sm:text-4xl pt-2 font-extrabold">Article 1</span>
-                        <ul className="text-left text-gray-300">
+                        <ul className="text-left text-gray-500">
                             <li className="translate-x-4">An adventure in BEM and SASS</li>
                             <li className="translate-x-8 text-blue-300 ">Parallels between NASA Voyager <br className="block sm:hidden"/> <span className='pl-5 sm:pl-0'>and Kawasaki Voyager</span></li>
                         </ul>
@@ -137,7 +137,7 @@ const TrainingPurposes = () => {
                         className="group p-6 relative"
                     >
                         <span className="text-2xl sm:text-4xl pt-2 font-extrabold">Article 2</span>
-                        <ul className="text-left text-gray-300">
+                        <ul className="text-left text-gray-500">
                             <li className="translate-x-4">An adventure in BEM and SASS</li>
                             <li className="translate-x-8 text-blue-300">Native American Plains Culture </li>
                         </ul>
