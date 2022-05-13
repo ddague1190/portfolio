@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { useEffect, useRef } from "react"
+import { useEffect } from "react"
 import { removeOverflowHidden, addOverflowHidden } from "../../lib/homeOverflowStyles"
 const features = [
   { name: 'Tailwind CSS', description: "I focused for a while on strict adherence BEM and a 7-1 SASS architecture. In React projects, this approach feels sub-optimal. Tailwind feels convenient for simple mock-ups.  (There exists an entire build of this site in another theme using BEM and global scoped style sheets)." },
@@ -10,8 +10,7 @@ const features = [
 
 export default function FishNStik() {
 
-  const gitHubLink = useRef()
-  const websiteLink = useRef()
+
   useEffect(() => {
     removeOverflowHidden()
     return addOverflowHidden
@@ -24,7 +23,7 @@ export default function FishNStik() {
       <div className="max-w-2xl mx-auto py-24 px-4 grid items-center grid-cols-1 gap-y-16 gap-x-8 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 lg:grid-cols-2">
 
         <div>
-          <h2 className="text-4xl font-extrabold tracking-tighter text-gray-900 sm:text-4xl">FishNStik</h2>
+          <h2 className="text-4xl font-extrabold tracking-tighter text-gray-900 sm:text-4xl">Fish n Wire</h2>
 
 
           <p className="mt-4 text-gray-500">

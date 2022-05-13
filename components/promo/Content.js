@@ -10,7 +10,6 @@ import state from "../../store"
 import VideoParagraph from "./VideoParagraph"
 import Soft from "./Soft";
 import Hard from "./Hard"
-import { Html, Text as DreiText } from "@react-three/drei"
 
 
 export default function Content() {

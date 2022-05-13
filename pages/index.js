@@ -1,4 +1,4 @@
-//inspired by https://codesandbox.io/s/tender-worker-sh76f?from-embed=&file=/src/store.js:91-224
+//credit to Paul Henschel inspired by https://codesandbox.io/s/tender-worker-sh76f?from-embed=&file=/src/store.js:91-224
 import React, { useRef, useEffect, Suspense } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import state from "../store"
@@ -7,17 +7,8 @@ import Content from "../components/promo/Content"
 import { addOverflowHidden, removeOverflowHidden } from "../lib/homeOverflowStyles"
 import Diamonds from "../components/promo/diamonds/Diamonds"
 import { useRouter } from "next/router"
-import Plane from "../components/promo/Plane";
-import lerp from 'lerp'
 
 
-
-
-function Startup() {
-    const ref = useRef()
-    useFrame(() => (ref.current.material.opacity = lerp(ref.current.material.opacity, 0, 0.025)))
-    return <Plane ref={ref} color="#0e0e0f" position={[0, 0, 200]} scale={[100, 100, 1]} />
-}
 
 
 export default function Home() {

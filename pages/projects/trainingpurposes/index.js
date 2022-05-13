@@ -1,8 +1,5 @@
-import React, { useEffect, useState, useRef, useReducer } from 'react'
-import { useRouter } from "next/router"
-import Link from "next/link";
+import React, { useEffect, useReducer } from 'react'
 import { addOverflowHidden, removeOverflowHidden } from "../../../lib/homeOverflowStyles"
-import Popup from 'reactjs-popup';
 import GitHubButton from "../../../components/utilities/GitHubButton";
 
 const TINY_SHELTER_ARCHIVE = 'TINY_SHELTER_ARCHIVE'

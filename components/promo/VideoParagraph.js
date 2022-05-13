@@ -1,8 +1,6 @@
 import { Block, useBlock } from "../utilities/Blocks"
-import { Html } from "@react-three/drei";
-import { Text, MultilineText } from "./Text";
+import { MultilineText } from "./Text";
 import state from "../../store";
-import VideoPlane from "./VideoPlane";
 import { ExperimentalVideoPlane } from "./VideoPlane";
 
 export default function VideoParagraph({ image, index, offset, factor, header, aspect, text }) {
@@ -11,7 +9,6 @@ export default function VideoParagraph({ image, index, offset, factor, header, a
     const size = aspect < 1 && !mobile ? .65 : 1
     const alignRight = (canvasWidth - w * size - margin) / 2
     const left = !(index % 2)
-    console.log(w)
     const correctHeight = w > 8 ? -3 : -2
     return (
         <Block factor={factor} offset={offset}>
