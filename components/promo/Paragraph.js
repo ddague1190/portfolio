@@ -26,9 +26,9 @@ export default function Paragraph({ image, index, offset, factor, header, aspect
             {header}
           </Text>
           <Block factor={0.2}>
-            <Text opacity={0.5} size={w * 0.5} color="#1A1E2A" position={[((left ? w : -w) / 2) * size, (w * size) / aspect / 1, -10]}>
+            {/* <Text opacity={0.5} size={w * 0.5} color="#1A1E2A" position={[((left ? w : -w) / 2) * size, (w * size) / aspect / 1, -10]}>
               {"0" + (index + 1)}
-            </Text>
+            </Text> */}
           </Block>
         </group>
       </Block>

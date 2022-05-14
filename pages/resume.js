@@ -43,7 +43,7 @@ const About = () => {
 
 
                             <dd className="cursor-pointer inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-[#43bdff] hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"
-                                onClick={copyToClipboard.bind(null, 'ddague77@gmail.com')}>
+                                onClick={copyToClipboard.bind(null, 'me@darryldague.dev')}>
                                 Copy email
                             </dd>
                             {copied &&
@@ -101,7 +101,7 @@ const About = () => {
                     </h2>
                     <details className="mb-1" open>
                         <summary className="list-none font-semibold tracking-tighter">FishNStik
-                            <a target="_blank" rel="noopener noreferrer" className='tracking-normal font-normal ml-1' href="https://fishnstik.herokuapp.com">(https://fishnstik.herokuapp.com)</a>
+                            <a target="_blank" rel="noopener noreferrer" className='tracking-normal font-normal ml-1' href="https://fishnwire.herokuapp.com">(https://fishnwire.herokuapp.com)</a>
                             <time className="float-right font-light">2022</time>
                         </summary>
                         <p className=""> </p>

@@ -10,6 +10,13 @@ const state = {
     {
       offset: 1,
       factor: 2,
+      header: "",
+      image: "",
+      aspect: 1.8,
+    },
+    {
+      offset: 2,
+      factor: 2,
       header: "featured project",
       image: "",
       aspect: 1.8,
@@ -17,7 +24,7 @@ const state = {
       text2: "Built with Django and React."
     },
     { 
-      offset: 2,
+      offset: 3,
       factor: 2.25,
       header: "",
       image: "/langicons.png",
@@ -26,7 +33,7 @@ const state = {
         ""
     },
     {
-      offset: 3 ,
+      offset: 4,
       factor: 2.5,
       header: "Get in touch",
       image: "",
@@ -41,8 +48,9 @@ const state = {
     { offset: 3, color: "white", height: 20 }
   ],
   diamonds: [
-    // { x: 0, offset: 0.15, pos: new Vector3(), scale: 14, factor: 4 },
-    { x: 2, offset: 2, pos: new Vector3(), scale: 6, factor: 2.25},
+    { x: 0, offset: 0.2, pos: new Vector3(), scale: 14, factor: 8 },
+    { x:1, offset: 1.2, pos: new Vector3(), scale: 2, factor: 2.},
+    { x:1, offset: 1.9, pos: new Vector3(), scale:1 , factor: 2.25},
     // { x: -5, offset: 2, pos: new Vector3(), scale: 1.8, factor: 2.5 },
   ],
   top: createRef()

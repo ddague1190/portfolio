@@ -21,12 +21,13 @@ body {
   margin: 0;
   padding: 0;
   /* background-color: #f7f9fb; */
-  background-color: #fefefe;
-  /* background-color: #43bdff; */
+  /* background-color: #e1e4ea; */
+  
+  background-color: #333333;
 
   /* overflow: hidden; */
   font-family: 'Galley';
-  color: #333333;
+  color: white;
   font-size: 0.9rem;
 }
 

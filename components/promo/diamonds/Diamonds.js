@@ -38,13 +38,12 @@ export default function Diamonds() {
     state.diamonds.forEach((data, i) => {
       const t = clock.getElapsedTime() / 4
       const { x, offset, scale, factor } = data
-      const correctedOffset = contentMaxWidth > 10 ? offset : contentMaxWidth > 7.2 ? (offset - .3) : contentMaxWidth > 6 ? offset - .5 : offset - .73
       const s = (contentMaxWidth / 35) * scale
       data.pos.set(mobile ? 0 : x, lerp(data.pos.y, -sectionHeight * offset * factor + (state.top.current / state.zoom) * factor, 0.1), 0)
       dummy.position.copy(data.pos)
       //   if (i === state.diamonds.length - 1) dummy.rotation.set(0, t, 0)
       //   else dummy.rotation.set(t, t, t)
-      dummy.rotation.set(t, t * 2, t)
+      dummy.rotation.set(0, t, 0)
       dummy.scale.set(s, s, s)
       dummy.updateMatrix()
       model.current.setMatrixAt(i, dummy.matrix)
