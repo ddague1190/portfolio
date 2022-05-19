@@ -6,7 +6,7 @@ import state from "../../store";
 
 
 const text_1 = 'I am fluent in Python and Javascript. My web technology training spans CSS, HTML, browser APIs, and front- and back-end frameworks like React and Django.'
-const text_2 = 'One of things I love about web development is its stacked nature. Once a technology or method is adopted and practiced, you can peel back the layers and learn a topic more deeply. For example, I am strengthening my knowledge of algorithms and advanced data structures - while also formalizing what it means to be a truly accessibility-first, semantic HTML author.'
+const text_2 = 'One of things I love about web development is its stacked nature. Once a technology or method is adopted and practiced, you can peel back the layers and learn a topic more deeply. For example, I am currently learning TypeScript and webGL while also diving deeper into algorithms and web accessiblity.'
 export function Hard({ image, index, offset, factor, header }) {
 
 
