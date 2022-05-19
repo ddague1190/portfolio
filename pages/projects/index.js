@@ -32,7 +32,7 @@ export default function Projects() {
         <section className='py-5 w-max'>
           <dl>
             <dt className="text-xl tracking-widest font-light py-2">
-              Projects for training purposes
+              Other projects
             </dt>
             <dd className="text-4xl py-2  font-extrabold">
               <Link href="projects/trainingpurposes">See them</Link>

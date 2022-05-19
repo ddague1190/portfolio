@@ -23,7 +23,7 @@ export default function FishNWire() {
       <div className="max-w-2xl mx-auto py-24 px-4 grid items-center grid-cols-1 gap-y-16 gap-x-8 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 lg:grid-cols-2">
 
         <div>
-          <h2 className="text-4xl font-extrabold tracking-tighter text-gray-900 sm:text-4xl">Fish n Wire</h2>
+          <h2 className="text-4xl font-extrabold tracking-tighter text-[#43bdff] sm:text-4xl">Fish n Wire</h2>
 
 
           <p className="mt-4 text-gray-500">
@@ -81,14 +81,14 @@ export default function FishNWire() {
 
         </div>
         <section className="text-black mt-8 col-start-1 col-span-full">
-          <h1 className="text-2xl text-blue-500">Reflections</h1>
+          <h1 className="text-2xl text-[#43bdff]">Reflections</h1>
 
           <dl className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
             {features.map((feature) => (
               <div key={feature.name} className="border-t border-gray-200 pt-4">
                 <dt className="font-base text-gray-900">{feature.name}</dt>
                 <dd className="mt-2 text-sm text-gray-500 ">{feature.description}</dd>
-                {feature.blogTitle && <dd className='text-xs mt-4 w-26 font-semibold text-blue-500 '><Link href={feature.blogLink}>{`See my post on ${feature.blogTitle}`}</Link></dd>}
+                {feature.blogTitle && <dd className='text-xs mt-4 w-26 font-semibold text-[#43bdff] '><Link href={feature.blogLink}>{`See my post on ${feature.blogTitle}`}</Link></dd>}
               </div>
             ))}
           </dl>

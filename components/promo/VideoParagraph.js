@@ -10,25 +10,31 @@ export default function VideoParagraph({ image, index, offset, factor, header, a
     const { contentMaxWidth: w, canvasWidth, margin, mobile, viewportWidth } = useBlock()
     const size = aspect < 1 && !mobile ? .65 : 1
     const alignRight = (canvasWidth - w * size - margin) / 2 - (!mobile && .4)
-    const left = !(index % 2)
+    const left = false
     const pixelWidth = w * state.zoom * size
 
 
-    const text="An e-commerce platform built with React and Django."
+    const text = "Quick tour of an e-commerce platform I build in React and Django."
     return (
         <Block factor={factor} offset={offset}>
-            <group position={[-alignRight, 0, 0]}>
-                <ExperimentalVideoPlane args={[1, 1, 32, 32]} shift={150} size={size} aspect={aspect} scale={[w * size*1.2 , (w * size*1.2) / aspect, 1]} />
-                <group>
-                    <Text lineHeight={w / 13} left={left} right={!left} size={w * .06 } color={state.boldColor} top position={[((left ? -w : w) * size) / 2, (w * size) / aspect / 2 + (w/8), -1]}>fish n wire</Text>
-                </group>
+            <group position={[0, 0, 0]}>
+                <ExperimentalVideoPlane args={[1, 1, 32, 32]} shift={200} size={size} aspect={aspect} scale={[w * size * 1.2, (w * size * 1.2) / aspect, 1]} />
+
+                <Text lineHeight={w / 13} left={left} right={!left} size={w * .05} color={state.boldColor} top position={[(w) / 3, (w * size) / aspect / 2 + (w / 8), -1]}>project demo</Text>
+
                 <Html
-            style={{ width: pixelWidth / (mobile ? 1 : 2), fontSize: '20px' }}
-            position={[ mobile ? (-w * size) / 2 : -w/1.8, (-w * size) / 2 / aspect - 0.7, 1]}
-            >
-            <div className="font-extrabold tracking-tighter text-2xl  text-gray-50 text-left" tabIndex={index}>{text}</div>
-          </Html>
+                    className="pointer-events-none"
+                    style={{ width: pixelWidth, fontSize: '20px' }}
+                    position={[(-w * size) / 2, (-w * size) / 2 / aspect - 0.7, 1]}
+                >
+                    <p className="text-base md:text-xl xl:text-2xl  font-extrabold tracking-tighter text-gray-500 text-left" tabIndex={index}>{text} <button type='button' disabled className='text-base md:text-xl xl:text-2xl outline-none ml-1 bg-transparent text-black'> [see more]</button></p>
+                </Html>
             </group>
+            <Block factor={0.2}>
+                <Text opacity={0.5} size={w * 0.1} color="#efefef" position={[-w/ 2* size, (w * size) / aspect / 1 + .5, -10]}>
+                    02
+                </Text>
+            </Block>
         </Block>
     )
 }

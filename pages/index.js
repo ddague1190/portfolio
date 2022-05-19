@@ -1,6 +1,6 @@
 //credit to Paul Henschel inspired by https://codesandbox.io/s/tender-worker-sh76f?from-embed=&file=/src/store.js:91-224
 import React, { useRef, useEffect, Suspense } from "react"
-import { Canvas, useFrame } from "@react-three/fiber"
+import { Canvas } from "@react-three/fiber"
 import state from "../store"
 import { Html } from "@react-three/drei"
 import Content from "../components/promo/Content"
@@ -23,22 +23,30 @@ export default function Home() {
 
         const goToBuildPage = (e) => {
             e.preventDefault();
-
-            if (e.target.id === '01') {
+            if (e.target.id === '02') {
                 router.push('/projects/fishnwire')
             }
-            else if (e.target.id === 'href:/projects/') {
-                router.push('/projects')
-            }
-
-            else if (e.target.id === '03') {
+            else if (e.target.id === '04') {
                 router.push('/resume')
             }
+        }
+        const cursorPointer = (e) => {
+            if (e.target.id === '02') {
+                document.body.style.cursor = 'pointer';
+            }
 
+            else if (e.target.id === '04') {
+                document.body.style.cursor = 'pointer';
+            }
+            else { 
+                document.body.style.cursor = 'default'
+            }
         }
         document.addEventListener('click', goToBuildPage)
+        document.addEventListener('mouseover', cursorPointer)
         return () => {
-            removeEventListener('click', goToBuildPage)
+            document.removeEventListener('click', goToBuildPage)
+            document.removeEventListener('mouseover', cursorPointer)
         }
     }, [router])
     const scrollArea = useRef()

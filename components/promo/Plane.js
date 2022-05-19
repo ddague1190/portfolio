@@ -19,7 +19,7 @@ const Plane = forwardRef(({ color = "white", shift = 1, opacity = 1, args, map, 
   return (
     <mesh ref={ref} {...props}>
       <planeBufferGeometry args={args} />
-      <customMaterial ref={material} color={color} map={map} transparent opacity={opacity} />
+      <customMaterial ref={material} color={color} map={map} transparent opacity={opacity}  />
     </mesh>
   )
 })

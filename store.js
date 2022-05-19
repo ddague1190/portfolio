@@ -3,38 +3,44 @@ import { Vector3 } from "three"
 
 const state = {
   boldColor:'#43bdff',
-  sections: 4,
-  pages: 4,
+  sections: 5,
+  pages: 5,
   zoom: 75,
   paragraphs: [
+
+    // video paragraph 
     {
-      offset: 1,
-      factor: 2,
+      offset: 2,
+      factor: 1,
       header: "",
       image: "",
       aspect: 1.8,
     },
+    //hardskills
     {
-      offset: 2,
-      factor: 2,
+      offset: 2.8,
+      factor: 1,
       header: "featured project",
       image: "",
       aspect: 1.8,
       text: "An e-commerce platform.",
       text2: "Built with Django and React."
     },
+
+    // hardskillsnext
     { 
       offset: 3,
-      factor: 2.25,
+      factor: 1,
       header: "",
       image: "/langicons.png",
-      aspect: 1.5,
+      aspect: 1,
       text:
         ""
     },
+    // contact
     {
       offset: 4,
-      factor: 2.5,
+      factor: 1,
       header: "Get in touch",
       image: "",
       aspect: 1.5037,
@@ -44,13 +50,12 @@ const state = {
 
   ],
   stripes: [
-    { offset: 0, color: "#black", height: 5 },
-    { offset: 3, color: "white", height: 20 }
+    // { offset: 0, color: "white", height: .5 },
+    // { offset: 3, color: "#cccccc", height: 1 }
   ],
   diamonds: [
-    { x: 0, offset: 0.2, pos: new Vector3(), scale: 14, factor: 8 },
-    { x:1, offset: 1.2, pos: new Vector3(), scale: 2, factor: 2.},
-    { x:1, offset: 1.9, pos: new Vector3(), scale:1 , factor: 2.25},
+    { x: 0, offset: 0.05, pos: new Vector3(), scale: 4, factor: 2 },
+
     // { x: -5, offset: 2, pos: new Vector3(), scale: 1.8, factor: 2.5 },
   ],
   top: createRef()

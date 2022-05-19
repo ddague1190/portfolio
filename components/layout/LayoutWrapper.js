@@ -17,14 +17,14 @@ const LayoutWrapper = ({ children }) => {
         <SectionContainer>
             <div className="flex flex-col h-screen justify-between">
                 <Portal>
-                    <header className="flex sm:bg-black w-screen sm:bg-opacity-50 ml-auto">
+                    <header className="flex w-screen  ml-auto">
                         <div className="flex items-center text-base leading-5 p-2">
                             <div className="hidden sm:block">
                                 {headerNavLinks.map((link) => (
                                     <Link
                                         key={link.title}
                                         href={link.href}
-                                        className={`p-1 font-extrabold lg:text-2xl text-xl tracking-wider  ${router.pathname === link.href ? 'text-[#43bdff] select-text tracking-tighter ' : (useLight ? 'text-gray-200' : 'text-gray-800')} hover:scale-[1.01] sm:p-4`}
+                                        className={`p-1 font-extrabold lg:text-2xl text-xl tracking-tighter  ${router.pathname === link.href ? 'text-[#43bdff] select-text tracking-tighter ' : (useLight ? 'text-gray-500' : 'text-gray-800')} hover:scale-[1.01] sm:p-4`}
                                     >
                                         {link.title}
                                     </Link>

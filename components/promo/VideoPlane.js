@@ -20,11 +20,11 @@ export const ExperimentalVideoPlane = forwardRef(({ color = "white", shift = 30,
     });
     let last = state.top.current
 
-    // useFrame(() => {
-    //     const { pages, top } = state
-    //     material.current.shift = lerp(material.current.shift, ((top.current - last) / shift) * 1.5, 0.1)
-    //     last = top.current
-    // })
+    useFrame(() => {
+        const { pages, top } = state
+        material.current.shift = lerp(material.current.shift, ((top.current - last) / shift) * 1.5, 0.1)
+        last = top.current
+    })
 
     return (
       <mesh ref={meshRef} {...props}>

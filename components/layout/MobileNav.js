@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useRouter } from "next/router"
 import Link from "../utilities/Link"
 import headerNavLinks from '../../data/headerNavLinks'
-import Portal from "../utilities/Portal"
 
 const MobileNav = () => {
   const router = useRouter()
@@ -67,7 +66,7 @@ const MobileNav = () => {
             <div key={link.title} className="px-12 py-4">
               <Link
                 href={link.href}
-                className={`p-1 font-extrabold text-2xl tracking-wider  ${router.pathname === link.href ? 'text-blue-500 select-text tracking-tighter ' : 'text-gray-200'} hover:scale-[1.01] sm:p-4`}
+                className={`p-1 font-extrabold text-2xl ${router.pathname === link.href ? 'text-blue-500 select-text tracking-tighter ' : 'text-gray-200'} hover:scale-[1.01] sm:p-4`}
                 onClick={onToggleNav}
               >
                 {link.title}
