@@ -25,7 +25,7 @@ export function Hard({ image, index, offset, factor, header }) {
 
 
                 >
-                    <article className="text-[14px] sm:text-[16px] md:text-xl xl:text-2xl font-bold text-gray-900" tabIndex={index}>
+                    <article className="text-[16px] md:text-xl xl:text-2xl font-bold text-gray-900" tabIndex={index}>
                         {text_1} <br /> <br />{text_2}
                     </article>
                 </Html>
