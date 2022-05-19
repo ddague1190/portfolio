@@ -16,7 +16,7 @@ function Block({ children, offset, factor, ...props }) {
     // factor how fast 
     // offset where on screen initially and from which direction to enter
     // when -sectionHeight (which is equal to canvas height if pages and sections are equal)*offset*factor = 0, then group will be center
-    ref.current.position.y = THREE.MathUtils.lerp(curY, (curTop / state.zoom) * factor, .3)
+    ref.current.position.y = THREE.MathUtils.lerp(curY, (curTop / state.zoom) * factor, .15)
   })
   return (
     <offsetContext.Provider value={offset}>

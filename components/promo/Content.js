@@ -44,7 +44,7 @@ export default function Content() {
       <Soft index={3} {...state.paragraphs[3]} />
 
       <Block key={0} factor={2} offset={-.75}>
-        <Plane materialShift map={heroPic} args={[50, 50, 32, 32]} shift={40} rotation={[0, 0, -Math.PI / 2.2]} position={[-2, 8, -20]} />
+        <Plane materialShift map={heroPic} args={[50, 50, 32, 32]} shift={40} rotation={[0, 0, -Math.PI / 2.2]} position={[-2, 8+.4/w, -20]} />
       </Block>
 
       {state.stripes.map(({ offset, color, height }, index) => (

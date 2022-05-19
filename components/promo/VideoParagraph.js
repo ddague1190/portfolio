@@ -18,7 +18,7 @@ export default function VideoParagraph({ image, index, offset, factor, header, a
     return (
         <Block factor={factor} offset={offset}>
             <group position={[0, 0, 0]}>
-                <ExperimentalVideoPlane args={[1, 1, 32, 32]} shift={100} size={size} aspect={aspect} scale={[w * size * 1.2, (w * size * 1.2) / aspect, 1]} />
+                <ExperimentalVideoPlane args={[1, 1, 32, 32]} shift={200} size={size} aspect={aspect} scale={[w * size * 1.2, (w * size * 1.2) / aspect, 1]} />
 
                 <Text lineHeight={w / 13} left={left} right={!left} size={w * .05} color={state.boldColor} top position={[(w) / 3, (w * size) / aspect / 2 + (w / 8), -1]}>project demo</Text>
 

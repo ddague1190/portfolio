@@ -22,7 +22,7 @@ export const ExperimentalVideoPlane = forwardRef(({ color = "white", shift = 30,
 
     useFrame(() => {
         const { pages, top } = state
-        material.current.shift = lerp(material.current.shift, ((top.current - last) / shift) * 1.5, 0.5)
+        material.current.shift = lerp(material.current.shift, ((top.current - last) / shift) * 1.5, 0.15)
         last = top.current
     })
 
