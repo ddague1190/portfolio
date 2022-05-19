@@ -39,7 +39,7 @@ export default function Diamonds() {
     state.diamonds.forEach((data, i) => {
       const t = clock.getElapsedTime() / 10
       const { x, offset, scale, factor } = data
-      const correctedOffset = offset - .2/contentMaxWidth
+      const correctedOffset = offset - .17/contentMaxWidth
       const s = (contentMaxWidth / 35) * scale
       data.pos.set(mobile ? 0 : x, (lerp(data.pos.y, -sectionHeight * correctedOffset * factor + (state.top.current / state.zoom) * factor, 0.1))-(contentMaxWidth*.03), 0)
       dummy.position.copy(data.pos)

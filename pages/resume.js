@@ -28,7 +28,7 @@ const About = () => {
     }
     return (
         <>
-            <main className="max-w-4xl text-base mx-auto lg:px-0 px-4 mt-20 mb-20 " itemScope itemType="http://schema.org/Person">
+            <main className="max-w-4xl text-[12px] md:text-base mx-auto lg:px-0 px-4 mt-20 mb-20 " itemScope itemType="http://schema.org/Person">
                 <header className=''>
                     <h1 className="tracking-tighter font-extrabold text-2xl mb-2">Darryl Dague</h1>
 
@@ -66,10 +66,10 @@ const About = () => {
                 </header>
 
                 <section className="mb-2">
-                    <h2 className="uppercase text-base text-blue-300 mb-1 mt-10 tracking-tighter border-b-[1px]">
+                    <h2 className="uppercase text-blue-300 mb-1 mt-10 tracking-tighter border-b-[1px]">
                         Summary
                     </h2>
-                    <p className="tracking-tighter text-base mb-1">I am an aspiring web developer with a strong foundation in programming syntax and idioms and CS fundamentals. Through a set of self-directed projects, I have become deeply familiar for with modern frameworks and development tools. I can quickly leverage new technologies while also working diligently to perfect my understanding of tools with which I have had more practice. </p>
+                    <p className="tracking-tighter mb-1">I am an aspiring web developer with a strong foundation in programming syntax and idioms and CS fundamentals. Through a set of self-directed projects, I have become deeply familiar for with modern frameworks and development tools. I can quickly leverage new technologies while also working diligently to perfect my understanding of tools with which I have had more practice. </p>
                 </section>
                 <section className="mb-2">
                     <h2 className="uppercase text-blue-300 mb-1 mt-10 tracking-tighter border-b-[1px]">
