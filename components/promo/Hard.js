@@ -17,7 +17,7 @@ export function Hard({ image, index, offset, factor, header }) {
     return (
         <Block factor={factor} offset={offset}>
             <group position={[(-w * size) / 2, (-w * size) / 2 + 3.4, 1]}>
-                <Text lineHeight={w / 13} left={left} right={!left} size={w * .05} color={state.boldColor} position={[w / 1.3, .5, 0]}>relevant skills</Text>
+                <Text lineHeight={w / 13} left={left} right={!left} size={w * .05} color={state.boldColor} position={[w / 1.3, .75, 0]}>relevant skills</Text>
 
                 <Html
                     className="pointer-events-none"
@@ -25,12 +25,12 @@ export function Hard({ image, index, offset, factor, header }) {
 
 
                 >
-                    <article className="text-base md:text-xl xl:text-2xl font-bold text-gray-900" tabIndex={index}>
+                    <article className="text-lg md:text-xl xl:text-2xl font-bold text-gray-900" tabIndex={index}>
                         {text_1} <br /> <br />{text_2}
                     </article>
                 </Html>
                 <Block factor={0.2}>
-                    <Text position={[0, 1, 0]} opacity={0.5} size={w * 0.1} color="#eeeeee" >
+                    <Text position={[0, 1.25, 0]} opacity={0.5} size={w * 0.1} color="#eeeeee" >
                         03
                     </Text>
                 </Block>

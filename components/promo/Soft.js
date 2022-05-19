@@ -1,5 +1,4 @@
 import { Block, useBlock } from "../utilities/Blocks"
-import { Html } from "@react-three/drei";
 import Model from "../three/avatar/Anim_wave";
 import { useRef } from "react";
 import { Text } from "./Text";
@@ -18,7 +17,7 @@ export default function Soft({ image, index, offset, factor, header, aspect, tex
                 <mesh>
                     <Model scale={correctedScale} />
                     <ambientLight intensity={2} />
-                    <Text size={w * 0.05} position={[w/50, 2, 100]} color={state.boldColor}>
+                    <Text size={w * 0.05} position={[w/50, 5.2-10/w, 100]} color={state.boldColor}>
                         contact/resume
                     </Text>
 

@@ -1,6 +1,7 @@
 import { createRef } from "react"
 import { Vector3 } from "three"
 
+
 const state = {
   boldColor:'#43bdff',
   sections: 5,
@@ -10,7 +11,7 @@ const state = {
 
     // video paragraph 
     {
-      offset: 2.1,
+      offset: 2,
       factor: 1,
       header: "",
       image: "",

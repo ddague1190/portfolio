@@ -1,5 +1,5 @@
 
-import React, { useMemo, useRef } from "react"
+import React, { useMemo, useEffect } from "react"
 import * as THREE from 'three'
 import { useLoader } from "@react-three/fiber"
 import { TextureLoader, LinearFilter } from "three"
@@ -13,23 +13,20 @@ import { Hard } from "./Hard"
 import IntroductoryStatement from "./Intro"
 
 
-export default function Content() {
 
-  const images = useLoader(
-    TextureLoader, ['/langicons.png'])
+
+export default function Content() {
 
   const heroPic = useLoader(TextureLoader, '/genericcodingpic.jpg')
 
   useMemo(() => {
     heroPic.minFilter = LinearFilter
+    heroPic.generateMipmaps = false
+    heroPic.wrapS = heroPic.wrapT = THREE.ClampToEdgeWrapping
+    heroPic.needsUpdate = true
   }, [heroPic])
 
-  useMemo(() => images.forEach((texture, index) => {
-    texture.generateMipmaps = false
-    texture.wrapS = texture.wrapT = THREE.ClampToEdgeWrapping
-    texture.needsUpdate = true
-    texture.minFilter = LinearFilter
-  }), [images])
+
   const { contentMaxWidth: w, canvasWidth, canvasHeight, mobile } = useBlock()
 
 
@@ -38,17 +35,16 @@ export default function Content() {
       <Block factor={1} offset={0.09}>
         <Block factor={1}>
 
-          {/* <MultilineText size={w * .05} lineHeight={w / 10} position={[-w / 50, -1, -1]} text={`You\'ve landed on Darryl\'s\nweb dev portfolio page`} color='black' /> */}
-          <MultilineText size={w * .05} lineHeight={w / 13} position={[-w / 100, 3, -1]} text={`Building from exuberance\nto exacting specifications.`} color='white' />
+          <MultilineText size={w * .05} lineHeight={w / 13} position={[-w / 100, 3.5, -1]} text={`Building from exuberance\nto exacting specifications.`} color='white' />
         </Block>
       </Block>
       <IntroductoryStatement index={8} offset={.75} factor={1} aspect={3} />
       <VideoParagraph index={1} {...state.paragraphs[0]} />
-      <Hard index={2} {...state.paragraphs[1]} image={images[0]} />
+      <Hard index={2} {...state.paragraphs[1]} />
       <Soft index={3} {...state.paragraphs[3]} />
 
       <Block key={0} factor={2} offset={-.75}>
-        <Plane materialShift map={heroPic} args={[50, 50, 32, 32]} shift={40} rotation={[0, 0, -Math.PI / 2.2]} position={[-2, 11, -20]} />
+        <Plane materialShift map={heroPic} args={[50, 50, 32, 32]} shift={40} rotation={[0, 0, -Math.PI / 2.2]} position={[-2, 8, -20]} />
       </Block>
 
       {state.stripes.map(({ offset, color, height }, index) => (

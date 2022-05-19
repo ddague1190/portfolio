@@ -6,8 +6,7 @@ import { useLoader, useFrame } from "@react-three/fiber"
 import { useAsset } from "use-asset"
 import lerp from "lerp"
 import state from "../../store";
-// import Montserrat_Bold from "./Montserrat_Bold.json"
-
+import MOONGET from './MOONGET.json'
 
 class TextGeometry extends THREE.ExtrudeGeometry {
 
@@ -38,45 +37,13 @@ class TextGeometry extends THREE.ExtrudeGeometry {
 
 
 
-// export function Text({ children, size = 1, left, right, top, bottom, color = "white", opacity = 1, height = 0.01, layers = 0, font = "fonts/helvetiker_regular.typeface.json", ...props }) {
-
-//   const data = new FontLoader().parse(Montserrat_Bold)
-//   const geom = useAsset(() => new Promise((res) => res(new TextGeometry(children, { font: data, size: 1, height }))), [children])
-//   const onUpdate = useCallback(
-//     (self) => {
-//       const box = new Vector3()
-//       self.geometry.computeBoundingBox()
-//       self.geometry.boundingBox.getSize(box)
-//       self.position.x = left ? 0 : right ? -box.x : -box.x / 2
-//       self.position.y = top ? 0 : bottom ? -box.y : -box.y / 2
-//     },
-//     [left, right, top, bottom]
-//   )
-
-//   const ref = useRef()
-//   let last = state.top.current
-//   useFrame(() => {
-//     ref.current.shift = lerp(ref.current.shift, (state.top.current - last) / 100, 0.1)
-//     last = state.top.current
-//   })
-
-//   return (
-
-    
-//     <group {...props} scale={[size, size, 0.1]}>
-//       <mesh geometry={geom} onUpdate={onUpdate} frustumCulled={false}>
-//         <customMaterial map={heroPic} ref={ref} color={color} transparent opacity={opacity} />
-//       </mesh>
-//     </group>
-//   )
-// }
 
 
 export function Text({ children, size = 1, left, right, top, bottom, color = "white", opacity = 1, height = 0.01, layers = 0, font = "fonts/helvetiker_regular.typeface.json", ...props }) {
 
-  const data = useLoader(FontLoader, "/MOONGET_Heavy.blob")
+  // const data = useLoader(FontLoader, "/MOONGET_Heavy.blob")
 
-  // const data = new FontLoader().parse(Montserrat_Bold)
+  const data = new FontLoader().parse(MOONGET)
   const geom = useAsset(() => new Promise((res) => res(new TextGeometry(children, { font: data, size: 1, height }))), [children])
   const onUpdate = useCallback(
     (self) => {
@@ -85,6 +52,7 @@ export function Text({ children, size = 1, left, right, top, bottom, color = "wh
       self.geometry.boundingBox.getSize(box)
       self.position.x = left ? 0 : right ? -box.x : -box.x / 2
       self.position.y = top ? 0 : bottom ? -box.y : -box.y / 2
+      self.position.z = 100
     },
     [left, right, top, bottom]
   )
@@ -105,40 +73,7 @@ export function Text({ children, size = 1, left, right, top, bottom, color = "wh
   )
 }
 
-export function Text1({ children, size = 1, left, right, top, bottom, color = "white", opacity = 1, height = 0.01, layers = 0, font = "fonts/helvetiker_regular.typeface.json", ...props }) {
-  const data = useLoader(FontLoader, "/MOONGET_Heavy.blob")
-  // const data = useLoader(FontLoader, Montserrat_Regular)
-  // const font = new FontLoader().parse(Montserrat_Regular)
-  // const data = useLoader(FontLoader, "/Montserrat_Regular.json")
-  // const data = useLoader(FontLoader, "/Otter_Bold_Regular.json")
 
-  const geom = useAsset(() => new Promise((res) => res(new TextBufferGeometry(children, { font: data, size: 1, height, }))), [children])
-  const onUpdate = useCallback(
-    (self) => {
-      const box = new Vector3()
-      self.geometry.computeBoundingBox()
-      self.geometry.boundingBox.getSize(box)
-      self.position.x = left ? 0 : right ? -box.x : -box.x / 2
-      self.position.y = top ? 0 : bottom ? -box.y : -box.y / 2
-    },
-    [left, right, top, bottom]
-  )
-
-  const ref = useRef()
-  let last = state.top.current
-  useFrame(() => {
-    ref.current.shift = lerp(ref.current.shift, (state.top.current - last) / 100, 0.1)
-    last = state.top.current
-  })
-
-  return (
-    <group {...props} scale={[size, size, 0.1]}>
-      <mesh geometry={geom} onUpdate={onUpdate} frustumCulled={false}>
-        <customMaterial ref={ref} color={color} transparent opacity={opacity} />
-      </mesh>
-    </group>
-  )
-}
 
 export const MultilineText = ({ text, size = 1, lineHeight = 1, position = [0, 0, 0], ...props }) => {
   return (
