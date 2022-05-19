@@ -164,3 +164,7 @@ canvas {
 .text-[14px] {
   font-size: 14px !important;
 }
+
+body {
+  font-size: 100%;
+}
