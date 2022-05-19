@@ -28,7 +28,7 @@ const About = () => {
     }
     return (
         <>
-            <main className="max-w-4xl text-[12px] md:text-base mx-auto lg:px-0 px-4 mt-20 mb-20 " itemScope itemType="http://schema.org/Person">
+            <main className="max-w-4xl text-[14px] md:text-base mx-auto lg:px-0 px-4 mt-20 mb-20 " itemScope itemType="http://schema.org/Person">
                 <header className=''>
                     <h1 className="tracking-tighter font-extrabold text-2xl mb-2">Darryl Dague</h1>
 

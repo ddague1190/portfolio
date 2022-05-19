@@ -21,7 +21,7 @@ export default function IntroductoryStatement({ image, index, offset, factor, he
           className="pointer-events-none"
           style={{ width: pixelWidth / (mobile ? 1 : 1), fontSize: '20px' }}
         >
-          <article className="text-[16px] md:text-xl xl:text-2xl  font-bold text-gray-900" tabIndex={index}>{text}</article>
+          <p className="text-[16px] md:text-xl xl:text-2xl  font-bold text-gray-900" tabIndex={index}>{text}</p>
         </Html>
         <Block factor={0.2}>
           <Text opacity={0.5} size={w * 0.1} color="#efefef" position={[0, 1.25, 0]}>
