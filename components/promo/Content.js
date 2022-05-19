@@ -35,7 +35,7 @@ export default function Content() {
 
   return (
     <>
-      <Block factor={1} offset={0.1}>
+      <Block factor={1} offset={0.09}>
         <Block factor={1}>
 
           {/* <MultilineText size={w * .05} lineHeight={w / 10} position={[-w / 50, -1, -1]} text={`You\'ve landed on Darryl\'s\nweb dev portfolio page`} color='black' /> */}
@@ -44,17 +44,12 @@ export default function Content() {
       </Block>
       <IntroductoryStatement index={8} offset={.75} factor={1} aspect={3} />
       <VideoParagraph index={1} {...state.paragraphs[0]} />
-
-      {/* <Paragraph key={1} index={1} props={state[0]} image={images[0]} /> */}
       <Hard index={2} {...state.paragraphs[1]} image={images[0]} />
-
       <Soft index={3} {...state.paragraphs[3]} />
 
-
       <Block key={0} factor={2} offset={-.75}>
-        <Plane materialShift map={heroPic} args={[50, 50, 32, 32]} shift={40} rotation={[0, 0, -Math.PI / 2.2]} position={[-2, 13, -20]} />
+        <Plane materialShift map={heroPic} args={[50, 50, 32, 32]} shift={40} rotation={[0, 0, -Math.PI / 2.2]} position={[-2, 11, -20]} />
       </Block>
-
 
       {state.stripes.map(({ offset, color, height }, index) => (
         <Block key={index} factor={-1.5} offset={offset}>

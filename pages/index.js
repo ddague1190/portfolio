@@ -47,6 +47,7 @@ export default function Home() {
         return () => {
             document.removeEventListener('click', goToBuildPage)
             document.removeEventListener('mouseover', cursorPointer)
+            document.body.style.cursor = 'default'
         }
     }, [router])
     const scrollArea = useRef()

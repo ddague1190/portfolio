@@ -10,7 +10,7 @@ const state = {
 
     // video paragraph 
     {
-      offset: 2,
+      offset: 2.1,
       factor: 1,
       header: "",
       image: "",
