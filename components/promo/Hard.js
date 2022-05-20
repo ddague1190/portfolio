@@ -1,5 +1,4 @@
 import { Block, useBlock } from "../utilities/Blocks"
-import Plane from "./Plane";
 import { Html } from "@react-three/drei";
 import { Text } from "./Text";
 import state from "../../store";
@@ -25,7 +24,7 @@ export function Hard({ image, index, offset, factor, header }) {
 
 
                 >
-                    <article className="text-[16px] md:text-xl xl:text-2xl font-bold text-gray-900" tabIndex={index}>
+                    <article className="second_smallest text-[16px] md:text-xl xl:text-2xl font-bold text-gray-900" tabIndex={index}>
                         {text_1} <br /> <br />{text_2}
                     </article>
                 </Html>

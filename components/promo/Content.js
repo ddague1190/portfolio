@@ -1,5 +1,5 @@
 
-import React, { useMemo, useEffect } from "react"
+import React, { useMemo } from "react"
 import * as THREE from 'three'
 import { useLoader } from "@react-three/fiber"
 import { TextureLoader, LinearFilter } from "three"
