@@ -52,7 +52,7 @@ canvas {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  max-width: 1500px;
+  /* max-width: 1500px; */
   margin: 0 auto;
 }
 

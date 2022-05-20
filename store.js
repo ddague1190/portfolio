@@ -11,7 +11,7 @@ const state = {
 
     // video paragraph 
     {
-      offset: 2,
+      offset: 2.1,
       factor: 1,
       header: "",
       image: "",
@@ -19,7 +19,7 @@ const state = {
     },
     //hardskills
     {
-      offset: 2.8,
+      offset: 3,
       factor: 1,
       header: "featured project",
       image: "",
