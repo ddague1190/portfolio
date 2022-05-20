@@ -24,6 +24,7 @@ body {
   background-color: #f8f9fc;
   font-family: 'Montserrat-Regular', sans-serif;
   color: #333333;
+
 }
 
 a {
@@ -42,7 +43,8 @@ a {
 #root {
   width: 100vw;
   height: 100vh;
-  /* overflow: hidden; */
+  /* max-width: 1500px; */
+  margin: 0 auto;
 }
 
 
@@ -50,6 +52,8 @@ canvas {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 .canvas > div {

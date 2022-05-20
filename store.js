@@ -55,7 +55,7 @@ const state = {
     // { offset: 3, color: "#cccccc", height: 1 }
   ],
   diamonds: [
-    { x: 0, offset: 0.05, pos: new Vector3(), scale: 4, factor: 2 },
+    { x: 0, offset: 0.08, pos: new Vector3(), scale: 4, factor: 2 },
 
     // { x: -5, offset: 2, pos: new Vector3(), scale: 1.8, factor: 2.5 },
   ],
