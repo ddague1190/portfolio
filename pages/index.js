@@ -23,19 +23,19 @@ export default function Home() {
 
         const goToBuildPage = (e) => {
             e.preventDefault();
-            if (e.target.id === '02') {
+            if (e.target.id === '01') {
                 router.push('/projects/fishnwire')
             }
-            else if (e.target.id === '04') {
+            else if (e.target.id === '03') {
                 router.push('/resume')
             }
         }
         const cursorPointer = (e) => {
-            if (e.target.id === '02') {
+            if (e.target.id === '01') {
                 document.body.style.cursor = 'pointer';
             }
 
-            else if (e.target.id === '04') {
+            else if (e.target.id === '03') {
                 document.body.style.cursor = 'pointer';
             }
             else { 

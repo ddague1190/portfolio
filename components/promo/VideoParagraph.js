@@ -30,11 +30,7 @@ export default function VideoParagraph({ image, index, offset, factor, header, a
                     <p className="text-base md:text-xl xl:text-2xl  font-extrabold tracking-tighter text-gray-500 text-left" tabIndex={index}>{text} <button type='button' disabled className='text-base md:text-xl xl:text-2xl outline-none ml-1 bg-transparent text-black'> [see more]</button></p>
                 </Html>
             </group>
-            <Block factor={0.2}>
-                <Text opacity={0.5} size={w * 0.1} color="#efefef" position={[-w/ 2* size, (w * size) / aspect / 1 + .5, -10]}>
-                    02
-                </Text>
-            </Block>
+
         </Block>
     )
 }

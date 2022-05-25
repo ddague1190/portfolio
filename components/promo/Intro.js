@@ -8,7 +8,7 @@ export default function IntroductoryStatement({ image, index, offset, factor, he
   const { contentMaxWidth: w, canvasWidth, margin, mobile, viewportWidth } = useBlock()
   const size =  1
   const pixelWidth = w * state.zoom * size
-  const text = 'I am an aspiring web developer with a strong foundation in programming language syntax and idioms, web technologies, and CS principles. I have tremendous respect for the programmers and scientists who paved the way. I work hard to follow their practices correctly and purposefully. Learning to program has informed and improved many aspects of my life. My goal is to practice and build upon this learning by attaining a web development position.'
+  const text = 'I have a never-ending thirst for the building. '
 
   return (
     <Block factor={factor} offset={offset}>

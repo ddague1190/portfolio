@@ -10,7 +10,6 @@ import state from "../../store"
 import VideoParagraph from "./VideoParagraph"
 import Soft from "./Soft";
 import { Hard } from "./Hard"
-import IntroductoryStatement from "./Intro"
 
 
 
@@ -34,17 +33,15 @@ export default function Content() {
     <>
       <Block factor={1} offset={0.09}>
         <Block factor={1}>
-
           <MultilineText size={w * .05} lineHeight={w / 13} position={[-w / 100, 3.5, -1]} text={`Building from exuberance\nto exacting specifications.`} color='white' />
         </Block>
       </Block>
-      <IntroductoryStatement index={8} offset={.75} factor={1} aspect={3} />
       <VideoParagraph index={1} {...state.paragraphs[0]} />
       <Hard index={2} {...state.paragraphs[1]} />
       <Soft index={3} {...state.paragraphs[3]} />
 
       <Block key={0} factor={2} offset={-.75}>
-        <Plane materialShift map={heroPic} args={[50, 50, 32, 32]} shift={40} rotation={[0, 0, -Math.PI / 2.2]} position={[-2, 8+.4/w, -20]} />
+        <Plane materialShift map={heroPic} args={[50, 50, 32, 32]} shift={40} rotation={[0, 0, -Math.PI / 2.2]} position={[-2, 8 + .4 / w, -20]} />
       </Block>
 
       {state.stripes.map(({ offset, color, height }, index) => (

@@ -4,14 +4,14 @@ import { Vector3 } from "three"
 
 const state = {
   boldColor:'#43bdff',
-  sections: 5,
-  pages: 5,
+  sections: 4,
+  pages: 4,
   zoom: 75,
   paragraphs: [
 
     // video paragraph 
     {
-      offset: 2.1,
+      offset: 0.9,
       factor: 1,
       header: "",
       image: "",
@@ -19,7 +19,7 @@ const state = {
     },
     //hardskills
     {
-      offset: 3,
+      offset: 1.8,
       factor: 1,
       header: "featured project",
       image: "",
@@ -30,7 +30,7 @@ const state = {
 
     // hardskillsnext
     { 
-      offset: 3,
+      offset: 2.2,
       factor: 1,
       header: "",
       image: "/langicons.png",
@@ -40,7 +40,7 @@ const state = {
     },
     // contact
     {
-      offset: 4,
+      offset: 3,
       factor: 1,
       header: "Get in touch",
       image: "",

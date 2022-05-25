@@ -66,18 +66,19 @@ const TrainingPurposes = () => {
 
             <section className='py-5 w-max'>
                 <dl >
-                    <dt className="text-xl tracking-widest font-light py-2">
+                    <dt className="text-xl tracking-widest font-light py-2 border-b-2">
                         More developed
                     </dt>
                     <dd
                         onMouseEnter={dispatch.bind(null, { type: 'show', whichLink: TINY_SHELTER_ARCHIVE })}
                         onMouseLeave={dispatch.bind(null, { type: 'hide', whichLink: TINY_SHELTER_ARCHIVE })}
-                        className="group p-6 relative flex flex-col"
+                        className="group p-4 relative flex flex-col"
                     >
-                        <span className="text-2xl sm:text-4xl pt-2  font-extrabold">Tiny shelter archive</span>
+                        <span className="text-2xl sm:text-4xl font-extrabold">Tiny shelter archive </span>
                         <ul className="text-left text-gray-500">
+                         <li className="translate-x-4">Jul-2021</li>
                             <li className="translate-x-4">A pure Django application</li>
-                            <li className="translate-x-8 text-blue-300">A campervan database</li>
+                            <li className="translate-x-8 text-[#43bdff]">A campervan database</li>
                         </ul>
 
                         {state[TINY_SHELTER_ARCHIVE]['show'] &&
@@ -87,11 +88,13 @@ const TrainingPurposes = () => {
                     <dd
                         onMouseEnter={dispatch.bind(null, { type: 'show', whichLink: STONETHRONE })}
                         onMouseLeave={dispatch.bind(null, { type: 'hide', whichLink: STONETHRONE })}
-                        className="group p-6 relative flex flex-col">
-                        <span className="text-2xl sm:text-4xl pt-2 font-extrabold">Stonethrone</span>
+                        className="group p-4 relative flex flex-col">
+                        <span className="text-2xl sm:text-4xl font-extrabold">Stonethrone</span>
                         <ul className="text-left text-gray-500">
+                        <li className="translate-x-4">Nov-2021</li>
+
                             <li className="translate-x-4">A Django and pure JS website</li>
-                            <li className="translate-x-8 text-blue-300">An online hat store</li>
+                            <li className="translate-x-8 text-[#43bdff]">An online hat store</li>
                         </ul>
                         {state[STONETHRONE]['show'] &&
                             <GitHubButton links={state[STONETHRONE]['links']} youTubeLink='https://www.youtube.com/watch?v=Ssd09_FMGRo' />
@@ -99,17 +102,28 @@ const TrainingPurposes = () => {
                     </dd>
                 </dl>
             </section>
+            <section className='py-5 w-max '>
+                <dl>
+                    <dt className="text-xl tracking-widest font-light py-2 border-b-2">
+                        WordPress
+                    </dt>
+
+                    <dd className="group p-4 relative flex flex-col">
+                        <span className=" text-2xl sm:text-4xl font-extrabold text-gray-300">Coming soon</span>
+                    </dd>
+                </dl>
+            </section>
             <section className='py-5 w-max'>
                 <dl>
-                    <dt className="text-xl tracking-widest font-light py-2">
+                    <dt className="text-xl tracking-widest font-light py-2 border-b-2">
                         Minor works
                     </dt>
                     <dd
                         onMouseEnter={dispatch.bind(null, { type: 'show', whichLink: CALCULATOR })}
                         onMouseLeave={dispatch.bind(null, { type: 'hide', whichLink: CALCULATOR })}
-                        className="group p-6 relative"
+                        className="group relative p-4"
                     >
-                        <span className=" text-2xl sm:text-4xl pt-2 font-extrabold">Pure JS Calculator</span>
+                        <span className=" text-2xl sm:text-4xl font-extrabold">Pure JS Calculator</span>
                         {state[CALCULATOR]['show'] &&
                             <GitHubButton links={state[CALCULATOR]['links']} />
                         }
@@ -117,11 +131,13 @@ const TrainingPurposes = () => {
                     <dd
                         onMouseEnter={dispatch.bind(null, { type: 'show', whichLink: ARTICLE_1 })}
                         onMouseLeave={dispatch.bind(null, { type: 'hide', whichLink: ARTICLE_1 })}
-                        className="group p-6 relative">
-                        <span className="text-2xl sm:text-4xl pt-2 font-extrabold">Article 1</span>
+                        className="group p-4 relative">
+                        <span className="text-2xl sm:text-4xl font-extrabold">Article 1</span>
                         <ul className="text-left text-gray-500">
+                        <li className="translate-x-4">Sep-2021</li>
+
                             <li className="translate-x-4">An adventure in BEM and SASS</li>
-                            <li className="translate-x-8 text-blue-300 ">Parallels between NASA Voyager <br className="block sm:hidden"/> <span className='pl-5 sm:pl-0'>and Kawasaki Voyager</span></li>
+                            <li className="translate-x-8 text-[#43bdff] ">Parallels between NASA Voyager <br className="block sm:hidden"/> <span className='pl-5 sm:pl-0'>and Kawasaki Voyager</span></li>
                         </ul>
                         {state[ARTICLE_1]['show'] &&
                             <GitHubButton links={state[ARTICLE_1]['links']} />
@@ -131,12 +147,14 @@ const TrainingPurposes = () => {
 
                         onMouseEnter={dispatch.bind(null, { type: 'show', whichLink: ARTICLE_2 })}
                         onMouseLeave={dispatch.bind(null, { type: 'hide', whichLink: ARTICLE_2 })}
-                        className="group p-6 relative"
+                        className="group p-4 relative"
                     >
-                        <span className="text-2xl sm:text-4xl pt-2 font-extrabold">Article 2</span>
+                        <span className="text-2xl sm:text-4xl font-extrabold">Article 2</span>
                         <ul className="text-left text-gray-500">
+                        <li className="translate-x-4">Oct-2021</li>
+
                             <li className="translate-x-4">An adventure in BEM and SASS</li>
-                            <li className="translate-x-8 text-blue-300">Native American Plains Culture </li>
+                            <li className="translate-x-8 text-[#43bdff]">Native American Plains Culture </li>
                         </ul>
                         {state[ARTICLE_2]['show'] &&
                             <GitHubButton links={state[ARTICLE_2]['links']} />
