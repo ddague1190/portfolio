@@ -149,7 +149,7 @@ canvas {
 
 } */
 
-#myportal {
+#portal {
   position: fixed;
   z-index: 10000000000;
   top: 0;

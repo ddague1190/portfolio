@@ -12,7 +12,7 @@ const Portal= ({ children }) => {
 
    return mounted
       ? createPortal(children, 
-        document.getElementById("myportal"))
+        document.getElementById("portal"))
       : null
 }
 

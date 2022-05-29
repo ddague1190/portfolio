@@ -116,9 +116,9 @@ const About = () => {
                         Technical Skills
                     </h2>
                     <ul className="list-disc ml-3">
-                        <li>Languages: Python, JavaScript, CSS, HTML</li>
-                        <li>Databases: PostgreSQL</li>
-                        <li>Frameworks: React, Django, Next, Sass</li>
+                        <li>Languages: Python, JavaScript, CSS, HTML, PHP, Java, SQL</li>
+                        <li>Frameworks: React, Django, Next, SASS, Bootstrap, TailwindCSS</li>
+                        <li>Platforms: Wordpress, Shopify</li>
                         <li>Tools: Git, AWS, Webpack </li>
                     </ul>
                 </section>
