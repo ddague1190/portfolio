@@ -10,7 +10,7 @@ const ARTICLE_2 = 'ARTICLE_2'
 
 const initial_state = {
     TINY_SHELTER_ARCHIVE: {
-        links: ['https://www.tinyshelterarchive.com/', 'https://github.com/ddague1190/tinyshelterarchive'],
+        links: ['https://project-tsa.herokuapp.com/', 'https://github.com/ddague1190/tinyshelterarchive'],
         show: false
     },
     STONETHRONE: {
