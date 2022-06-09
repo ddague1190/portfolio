@@ -27,6 +27,7 @@ const LayoutWrapper = ({ children }) => {
                                         className={`p-1 font-extrabold lg:text-2xl text-xl tracking-tighter  ${router.pathname === link.href ? 'text-[#43bdff] select-text tracking-tighter ' : (useLight ? 'text-gray-500' : 'text-gray-800')} hover:scale-[1.01] sm:p-4`}
                                     >
                                         {link.title}
+
                                     </Link>
                                 ))}
                             </div>
