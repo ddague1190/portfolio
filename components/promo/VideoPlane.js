@@ -11,7 +11,7 @@ export const ExperimentalVideoPlane = forwardRef(({ color = "white", shift = 30,
     const material = useRef()
     useEffect(() => {
       const vid = document.createElement("video");
-      vid.src = "https://d3f2mb23naggdc.cloudfront.net/low_quality.mp4";
+      vid.src = "https://d38yldd14hn0rk.cloudfront.net/fishnstik+demo+720.mp4";
       vid.crossOrigin = "Allow-Origin";
       vid.loop = vid.muted = vid.playsInline = true;
       vid.play();
@@ -39,7 +39,7 @@ const VideoPlane = forwardRef(({ color = "white", shift = 1, opacity = 1, args, 
     const material = useRef()
     let last = state.top.current
     const [video] = useState(() =>
-        Object.assign(document.createElement('video'), { src: "https://d3f2mb23naggdc.cloudfront.net/low_quality.mp4", crossOrigin: 'Allow-Origin', loop: true, muted: true, playsInline: true}),
+        Object.assign(document.createElement('video'), { src: "https://d38yldd14hn0rk.cloudfront.net/fishnstik+demo+720.mp4", crossOrigin: 'Allow-Origin', loop: true, muted: true, playsInline: true}),
     )
     useEffect(() => void video.play(), [video])
     useFrame(() => {

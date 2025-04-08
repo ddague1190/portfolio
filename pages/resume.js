@@ -33,7 +33,7 @@ const About = () => {
                     <h1 className="tracking-tighter font-extrabold text-2xl mb-2">Darryl Dague</h1>
                     <span className="relative z-0 inline-flex shadow-sm rounded-md">
                         <div className="relative">
-                            <button type="button" className="relative inline-flex items-center p-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-[#43bdff] focus:border-[#43bdff]" onClick={copyToClipboard.bind(null, 'me@darryldague.dev')}>Copy email</button>
+                            <button type="button" className="relative inline-flex items-center p-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-[#43bdff] focus:border-[#43bdff]" onClick={copyToClipboard.bind(null, 'daguedarryl@gmail.com')}>Copy email</button>
                             {copied &&
                                 <span className="w-max absolute left-1/2 -bottom-3/4 -translate-x-1/2 text-green-500 font-bold">&#10003; Copied</span>
                             }
@@ -71,18 +71,18 @@ const About = () => {
                     <h2 className="uppercase text-[#43bdff] mb-1 mt-10 tracking-tighter border-b-[1px]">
                         Summary
                     </h2>
-                    <p className="tracking-tighter mb-1">I am an aspiring web developer with a strong foundation in programming syntax and idioms and CS fundamentals. Through a set of self-directed projects, I have become deeply familiar for with modern frameworks and development tools. I can quickly leverage new technologies while also working diligently to perfect my understanding of tools with which I have had more practice. </p>
+                    <p className="tracking-tighter mb-1">Recent CS graduate with interest in software development, bioinformatics, and webGL.</p>
                 </section>
                 <section className="mb-2">
                     <h2 className="uppercase text-[#43bdff] mb-1 mt-10 tracking-tighter border-b-[1px]">
                         Education
                     </h2>
                     <details className='' open >
-                        <summary className='list-none'>HarvardX Computer Science for Web Development Certificate
-                            <time className="float-right font-light">2021</time>
+                        <summary className='list-none'>University of the People, B.S. in Computer Science (graduation requirements met, waiting on degree conferral)
+                            <time className="float-right font-light">2022-2025</time>
                         </summary>
-
                     </details>
+                    <br/>
                     <details className="" open >
                         <summary className="list-none">New College of Florida, B.A. in Chemistry
                             <time className="float-right font-light">2005 - 2009</time>
@@ -118,7 +118,6 @@ const About = () => {
                     <ul className="list-disc ml-3">
                         <li>Languages: Python, JavaScript, CSS, HTML, PHP, Java, SQL</li>
                         <li>Frameworks: React, Django, Next, SASS, Bootstrap, TailwindCSS</li>
-                        <li>Platforms: Wordpress, Shopify</li>
                         <li>Tools: Git, AWS, Webpack </li>
                     </ul>
                 </section>

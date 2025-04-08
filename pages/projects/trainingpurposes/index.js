@@ -102,17 +102,6 @@ const TrainingPurposes = () => {
                     </dd>
                 </dl>
             </section>
-            <section className='py-5 w-max '>
-                <dl>
-                    <dt className="text-xl tracking-widest font-light py-2 border-b-2">
-                        WordPress
-                    </dt>
-
-                    <dd className="group p-4 relative flex flex-col">
-                        <span className=" text-2xl sm:text-4xl font-extrabold text-gray-300">Coming soon</span>
-                    </dd>
-                </dl>
-            </section>
             <section className='py-5 w-max'>
                 <dl>
                     <dt className="text-xl tracking-widest font-light py-2 border-b-2">

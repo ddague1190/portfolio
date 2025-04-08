@@ -14,7 +14,7 @@ export default function VideoParagraph({ image, index, offset, factor, header, a
     const pixelWidth = w * state.zoom * size
 
 
-    const text = "Quick tour of an e-commerce platform I made with React and Django."
+    const text = "A quick demo of an e-commerce platform I made with React and Django."
     return (
         <Block factor={factor} offset={offset}>
             <group position={[0, 0, 0]}>
